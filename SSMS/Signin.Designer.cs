@@ -28,50 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            txtStudentId = new TextBox();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
             panel1 = new Panel();
             checkBox1 = new CheckBox();
             label1 = new Label();
             label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // txtStudentId
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(864, 350);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(385, 40);
-            textBox1.TabIndex = 0;
+            txtStudentId.BorderStyle = BorderStyle.None;
+            txtStudentId.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtStudentId.Location = new Point(864, 350);
+            txtStudentId.Name = "txtStudentId";
+            txtStudentId.Size = new Size(385, 40);
+            txtStudentId.TabIndex = 0;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(864, 459);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(385, 40);
-            textBox2.TabIndex = 1;
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(864, 459);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(385, 40);
+            txtPassword.TabIndex = 1;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackgroundImage = Properties.Resources.button;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(3, 33);
-            button1.Name = "button1";
-            button1.Size = new Size(467, 77);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.BackgroundImage = Properties.Resources.button;
+            btnLogin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Location = new Point(3, 33);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(467, 77);
+            btnLogin.TabIndex = 2;
+            btnLogin.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnLogin);
             panel1.Location = new Point(792, 575);
             panel1.Name = "panel1";
             panel1.Size = new Size(476, 181);
@@ -115,6 +117,30 @@
             label2.TabIndex = 6;
             label2.Text = "<<Validation>>";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Green;
+            label3.Location = new Point(800, 305);
+            label3.Name = "label3";
+            label3.Size = new Size(121, 31);
+            label3.TabIndex = 7;
+            label3.Text = "Username";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Green;
+            label4.Location = new Point(800, 415);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 31);
+            label4.TabIndex = 8;
+            label4.Text = "Password";
+            // 
             // Signin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -122,12 +148,14 @@
             BackgroundImage = Properties.Resources.login;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1405, 902);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(checkBox1);
             Controls.Add(panel1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtStudentId);
             Name = "Signin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Signin";
@@ -139,12 +167,14 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox txtStudentId;
+        private TextBox txtPassword;
+        private Button btnLogin;
         private Panel panel1;
         private CheckBox checkBox1;
         private Label label1;
         private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }
