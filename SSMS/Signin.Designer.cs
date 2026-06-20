@@ -34,6 +34,7 @@
             panel1 = new Panel();
             checkBox1 = new CheckBox();
             label1 = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +60,8 @@
             // 
             button1.BackgroundImage = Properties.Resources.button;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(3, 33);
             button1.Name = "button1";
             button1.Size = new Size(467, 77);
@@ -77,24 +80,40 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.White;
             checkBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(800, 524);
+            checkBox1.ForeColor = Color.Green;
+            checkBox1.Location = new Point(800, 525);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(150, 29);
             checkBox1.TabIndex = 4;
             checkBox1.Text = "Remember Me";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.UseVisualStyleBackColor = false;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.BackColor = Color.White;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
             label1.Location = new Point(1113, 526);
             label1.Name = "label1";
             label1.Size = new Size(146, 25);
             label1.TabIndex = 5;
             label1.Text = "Forgot Password";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(937, 55);
+            label2.Name = "label2";
+            label2.Size = new Size(187, 31);
+            label2.TabIndex = 6;
+            label2.Text = "<<Validation>>";
             // 
             // Signin
             // 
@@ -103,13 +122,16 @@
             BackgroundImage = Properties.Resources.login;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1405, 902);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(checkBox1);
             Controls.Add(panel1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "Signin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Signin";
+            Load += Signin_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -123,5 +145,6 @@
         private Panel panel1;
         private CheckBox checkBox1;
         private Label label1;
+        private Label label2;
     }
 }

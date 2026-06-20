@@ -8,21 +8,11 @@ using System.Windows.Forms;
 
 namespace SSMS
 {
-    public partial class Signin : Form
+    public partial class student_register : Form
     {
-        public Signin()
+        public student_register()
         {
             InitializeComponent();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Signin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

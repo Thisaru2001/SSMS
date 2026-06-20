@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
             btnRefresh = new Button();
+            label2 = new Label();
+            label1 = new Label();
             dgvNotices = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNotices).BeginInit();
@@ -51,28 +51,6 @@
             panel1.Size = new Size(1084, 110);
             panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.73585F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(35, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(49, 45);
-            label1.TabIndex = 0;
-            label1.Text = "🕭";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 21.73585F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(100, 33);
-            label2.Name = "label2";
-            label2.Size = new Size(214, 45);
-            label2.TabIndex = 1;
-            label2.Text = "View Notices";
-            // 
             // btnRefresh
             // 
             btnRefresh.BackColor = Color.White;
@@ -86,9 +64,33 @@
             btnRefresh.Text = "⟳ Refresh";
             btnRefresh.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 21.73585F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(100, 33);
+            label2.Name = "label2";
+            label2.Size = new Size(214, 45);
+            label2.TabIndex = 1;
+            label2.Text = "View Notices";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 21.73585F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(35, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(49, 45);
+            label1.TabIndex = 0;
+            label1.Text = "🕭";
+            // 
             // dgvNotices
             // 
+            dgvNotices.BackgroundColor = Color.White;
             dgvNotices.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNotices.GridColor = Color.Silver;
             dgvNotices.Location = new Point(22, 127);
             dgvNotices.Name = "dgvNotices";
             dgvNotices.RowHeadersWidth = 45;
