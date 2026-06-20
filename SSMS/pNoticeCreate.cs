@@ -14,5 +14,10 @@ namespace SSMS
         {
             InitializeComponent();
         }
+
+        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
