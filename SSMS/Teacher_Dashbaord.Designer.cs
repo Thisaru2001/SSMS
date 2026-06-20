@@ -1,6 +1,6 @@
 ﻿namespace SSMS
 {
-    partial class Form1
+    partial class Teacher_Dashbaord
     {
         /// <summary>
         /// Required designer variable.
@@ -87,7 +87,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1521, 79);
+            panel1.Size = new Size(1577, 79);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -122,6 +122,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(lblTeacherName);
             panel2.Controls.Add(label12);
             panel2.Controls.Add(btnLogout);
@@ -129,13 +130,12 @@
             panel2.Controls.Add(btnProfile);
             panel2.Controls.Add(btnEsamShedule);
             panel2.Controls.Add(btnUpdate);
-            panel2.Controls.Add(btnAddMarks);
             panel2.Controls.Add(btnStudentAttendance);
             panel2.Controls.Add(pictureBox2);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 79);
             panel2.Name = "panel2";
-            panel2.Size = new Size(297, 774);
+            panel2.Size = new Size(297, 820);
             panel2.TabIndex = 1;
             // 
             // lblTeacherName
@@ -222,7 +222,7 @@
             btnAddMarks.BackColor = Color.FromArgb(192, 255, 192);
             btnAddMarks.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddMarks.ForeColor = Color.ForestGreen;
-            btnAddMarks.Location = new Point(42, 262);
+            btnAddMarks.Location = new Point(-81, 4);
             btnAddMarks.Name = "btnAddMarks";
             btnAddMarks.Size = new Size(205, 56);
             btnAddMarks.TabIndex = 2;
@@ -234,7 +234,7 @@
             btnStudentAttendance.BackColor = Color.FromArgb(192, 255, 192);
             btnStudentAttendance.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStudentAttendance.ForeColor = Color.ForestGreen;
-            btnStudentAttendance.Location = new Point(43, 188);
+            btnStudentAttendance.Location = new Point(58, 266);
             btnStudentAttendance.Name = "btnStudentAttendance";
             btnStudentAttendance.Size = new Size(204, 61);
             btnStudentAttendance.TabIndex = 1;
@@ -381,6 +381,7 @@
             // 
             panel7.Controls.Add(dataGridViewclasses);
             panel7.Controls.Add(label9);
+            panel7.Controls.Add(btnAddMarks);
             panel7.Location = new Point(314, 387);
             panel7.Name = "panel7";
             panel7.Size = new Size(815, 395);
@@ -408,6 +409,7 @@
             // 
             // panel8
             // 
+            panel8.BackColor = Color.Transparent;
             panel8.Controls.Add(lblNotice2);
             panel8.Controls.Add(btnViewAllNotices);
             panel8.Controls.Add(lblNotice1);
@@ -466,13 +468,14 @@
             label11.TabIndex = 10;
             label11.Text = "© 2025 Smart School Management System";
             // 
-            // Form1
+            // Teacher_Dashbaord
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
+            BackgroundImage = Properties.Resources.principal;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1521, 853);
+            ClientSize = new Size(1577, 899);
             Controls.Add(label11);
             Controls.Add(panel8);
             Controls.Add(panel7);
@@ -485,7 +488,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
-            Name = "Form1";
+            Name = "Teacher_Dashbaord";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Teacher dashboard";
             panel1.ResumeLayout(false);

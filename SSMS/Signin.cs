@@ -19,5 +19,10 @@ namespace SSMS
         {
 
         }
+
+        private void Signin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
