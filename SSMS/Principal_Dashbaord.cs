@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace SSMS
 {
-    public partial class student_register : Form
+    public partial class Principal_Dashbaord : Form
     {
-        public student_register()
+        public Principal_Dashbaord()
         {
             InitializeComponent();
         }
