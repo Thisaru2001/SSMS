@@ -83,6 +83,7 @@
             splitContainer1.Panel1.Controls.Add(btnStudentRegister);
             splitContainer1.Panel1.Controls.Add(btnTeacherRegister);
             splitContainer1.Panel1.Controls.Add(pictureBox1);
+            splitContainer1.Panel1.Paint += this.splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -91,7 +92,24 @@
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(label1);
             resources.ApplyResources(splitContainer1.Panel2, "splitContainer1.Panel2");
+            splitContainer1.Panel2.Paint += this.splitContainer1_Panel2_Paint;
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += this.pictureBox1_Click;
+            // 
+            // btnTeacherRegister
+            // 
+            btnTeacherRegister.BackColor = Color.White;
+            btnTeacherRegister.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnTeacherRegister, "btnTeacherRegister");
+            btnTeacherRegister.ForeColor = Color.Black;
+            btnTeacherRegister.Name = "btnTeacherRegister";
+            btnTeacherRegister.UseVisualStyleBackColor = false;
+            btnTeacherRegister.Click += this.btnTeacherRegister_Click;
             // btnLogout
             // 
             btnLogout.BackColor = Color.White;
@@ -102,6 +120,13 @@
             // 
             // btnNoticeCreate
             // 
+            btnStudentRegister.BackColor = Color.FromArgb(225, 245, 230);
+            btnStudentRegister.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnStudentRegister, "btnStudentRegister");
+            btnStudentRegister.ForeColor = Color.FromArgb(0, 120, 70);
+            btnStudentRegister.Name = "btnStudentRegister";
+            btnStudentRegister.UseVisualStyleBackColor = false;
+            btnStudentRegister.Click += this.btnStudentRegister_Click;
             btnNoticeCreate.BackColor = Color.White;
             btnNoticeCreate.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btnNoticeCreate, "btnNoticeCreate");
@@ -123,7 +148,25 @@
             resources.ApplyResources(btnTeacherAttendance, "btnTeacherAttendance");
             btnTeacherAttendance.Name = "btnTeacherAttendance";
             btnTeacherAttendance.UseVisualStyleBackColor = false;
+            btnTeacherAttendance.Click += this.btnTeacherAttendance_Click;
             // 
+            // btnProfile
+            // 
+            btnProfile.BackColor = Color.White;
+            btnProfile.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnProfile, "btnProfile");
+            btnProfile.Name = "btnProfile";
+            btnProfile.UseVisualStyleBackColor = false;
+            btnProfile.Click += this.btnProfile_Click;
+            // 
+            // btnNoticeCreate
+            // 
+            btnNoticeCreate.BackColor = Color.White;
+            btnNoticeCreate.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnNoticeCreate, "btnNoticeCreate");
+            btnNoticeCreate.Name = "btnNoticeCreate";
+            btnNoticeCreate.UseVisualStyleBackColor = false;
+            btnNoticeCreate.Click += this.btnNoticeCreate_Click;
             // btnTimetable
             // 
             btnTimetable.BackColor = Color.White;
@@ -134,6 +177,12 @@
             // 
             // btnStudentRegister
             // 
+            btnLogout.BackColor = Color.White;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnLogout, "btnLogout");
+            btnLogout.Name = "btnLogout";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += this.btnLogout_Click;
             btnStudentRegister.BackColor = Color.FromArgb(225, 245, 230);
             btnStudentRegister.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btnStudentRegister, "btnStudentRegister");
@@ -143,6 +192,10 @@
             // 
             // btnTeacherRegister
             // 
+            resources.ApplyResources(label1, "label1");
+            label1.ForeColor = Color.FromArgb(0, 120, 70);
+            label1.Name = "label1";
+            label1.Click += this.label1_Click;
             btnTeacherRegister.BackColor = Color.White;
             btnTeacherRegister.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btnTeacherRegister, "btnTeacherRegister");
@@ -152,6 +205,9 @@
             // 
             // pictureBox1
             // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
+            label2.Click += this.label2_Click;
             resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
