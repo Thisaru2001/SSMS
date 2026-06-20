@@ -14,5 +14,17 @@ namespace SSMS
         {
             InitializeComponent();
         }
+
+        // ADD THIS MISSING METHOD:
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Add your logic for button1 here
+        }
+
+        // ADD THIS MISSING METHOD:
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // Add your logic for label1 here
+        }
     }
 }

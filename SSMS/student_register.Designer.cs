@@ -30,34 +30,34 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(student_register));
             splitContainer1 = new SplitContainer();
-            pictureBox1 = new PictureBox();
-            btnTeacherRegister = new Button();
-            btnStudentRegister = new Button();
-            btnTimetable = new Button();
-            btnTeacherAttendance = new Button();
-            btnProfile = new Button();
-            btnNoticeCreate = new Button();
             btnLogout = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            btnNoticeCreate = new Button();
+            btnProfile = new Button();
+            btnTeacherAttendance = new Button();
+            btnTimetable = new Button();
+            btnStudentRegister = new Button();
+            btnTeacherRegister = new Button();
+            pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            label3 = new Label();
-            txtStudentName = new TextBox();
-            label4 = new Label();
-            cmbClassGrade = new ComboBox();
-            label5 = new Label();
-            dtpDOB = new DateTimePicker();
-            label6 = new Label();
-            cmbSection = new ComboBox();
-            label7 = new Label();
-            txtGuardianName = new TextBox();
-            label8 = new Label();
-            txtContact = new TextBox();
-            label9 = new Label();
-            txtAddress = new TextBox();
-            btnUploadPhoto = new Button();
-            pbStudentPhoto = new PictureBox();
             btnSaveEnrollment = new Button();
+            pbStudentPhoto = new PictureBox();
+            btnUploadPhoto = new Button();
+            txtAddress = new TextBox();
+            label9 = new Label();
+            txtContact = new TextBox();
+            label8 = new Label();
+            txtGuardianName = new TextBox();
+            label7 = new Label();
+            cmbSection = new ComboBox();
+            label6 = new Label();
+            dtpDOB = new DateTimePicker();
+            label5 = new Label();
+            cmbClassGrade = new ComboBox();
+            label4 = new Label();
+            txtStudentName = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -110,8 +110,15 @@
             btnTeacherRegister.Name = "btnTeacherRegister";
             btnTeacherRegister.UseVisualStyleBackColor = false;
             btnTeacherRegister.Click += this.btnTeacherRegister_Click;
+            // btnLogout
             // 
-            // btnStudentRegister
+            btnLogout.BackColor = Color.White;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnLogout, "btnLogout");
+            btnLogout.Name = "btnLogout";
+            btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // btnNoticeCreate
             // 
             btnStudentRegister.BackColor = Color.FromArgb(225, 245, 230);
             btnStudentRegister.FlatAppearance.BorderSize = 0;
@@ -120,14 +127,19 @@
             btnStudentRegister.Name = "btnStudentRegister";
             btnStudentRegister.UseVisualStyleBackColor = false;
             btnStudentRegister.Click += this.btnStudentRegister_Click;
+            btnNoticeCreate.BackColor = Color.White;
+            btnNoticeCreate.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnNoticeCreate, "btnNoticeCreate");
+            btnNoticeCreate.Name = "btnNoticeCreate";
+            btnNoticeCreate.UseVisualStyleBackColor = false;
             // 
-            // btnTimetable
+            // btnProfile
             // 
-            btnTimetable.BackColor = Color.White;
-            btnTimetable.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(btnTimetable, "btnTimetable");
-            btnTimetable.Name = "btnTimetable";
-            btnTimetable.UseVisualStyleBackColor = false;
+            btnProfile.BackColor = Color.White;
+            btnProfile.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnProfile, "btnProfile");
+            btnProfile.Name = "btnProfile";
+            btnProfile.UseVisualStyleBackColor = false;
             // 
             // btnTeacherAttendance
             // 
@@ -155,8 +167,15 @@
             btnNoticeCreate.Name = "btnNoticeCreate";
             btnNoticeCreate.UseVisualStyleBackColor = false;
             btnNoticeCreate.Click += this.btnNoticeCreate_Click;
+            // btnTimetable
             // 
-            // btnLogout
+            btnTimetable.BackColor = Color.White;
+            btnTimetable.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnTimetable, "btnTimetable");
+            btnTimetable.Name = "btnTimetable";
+            btnTimetable.UseVisualStyleBackColor = false;
+            // 
+            // btnStudentRegister
             // 
             btnLogout.BackColor = Color.White;
             btnLogout.FlatAppearance.BorderSize = 0;
@@ -164,19 +183,34 @@
             btnLogout.Name = "btnLogout";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += this.btnLogout_Click;
+            btnStudentRegister.BackColor = Color.FromArgb(225, 245, 230);
+            btnStudentRegister.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnStudentRegister, "btnStudentRegister");
+            btnStudentRegister.ForeColor = Color.FromArgb(0, 120, 70);
+            btnStudentRegister.Name = "btnStudentRegister";
+            btnStudentRegister.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // btnTeacherRegister
             // 
             resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.FromArgb(0, 120, 70);
             label1.Name = "label1";
             label1.Click += this.label1_Click;
+            btnTeacherRegister.BackColor = Color.White;
+            btnTeacherRegister.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnTeacherRegister, "btnTeacherRegister");
+            btnTeacherRegister.ForeColor = Color.Black;
+            btnTeacherRegister.Name = "btnTeacherRegister";
+            btnTeacherRegister.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // pictureBox1
             // 
             resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
             label2.Click += this.label2_Click;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -201,80 +235,21 @@
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
-            // label3
+            // btnSaveEnrollment
             // 
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
+            btnSaveEnrollment.BackColor = Color.FromArgb(0, 135, 80);
+            btnSaveEnrollment.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnSaveEnrollment, "btnSaveEnrollment");
+            btnSaveEnrollment.ForeColor = Color.White;
+            btnSaveEnrollment.Name = "btnSaveEnrollment";
+            btnSaveEnrollment.UseVisualStyleBackColor = false;
             // 
-            // txtStudentName
+            // pbStudentPhoto
             // 
-            resources.ApplyResources(txtStudentName, "txtStudentName");
-            txtStudentName.Name = "txtStudentName";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
-            // 
-            // cmbClassGrade
-            // 
-            cmbClassGrade.FormattingEnabled = true;
-            resources.ApplyResources(cmbClassGrade, "cmbClassGrade");
-            cmbClassGrade.Name = "cmbClassGrade";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
-            // 
-            // dtpDOB
-            // 
-            dtpDOB.Format = DateTimePickerFormat.Short;
-            resources.ApplyResources(dtpDOB, "dtpDOB");
-            dtpDOB.Name = "dtpDOB";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
-            // 
-            // cmbSection
-            // 
-            cmbSection.AutoCompleteSource = AutoCompleteSource.AllUrl;
-            cmbSection.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSection.FormattingEnabled = true;
-            resources.ApplyResources(cmbSection, "cmbSection");
-            cmbSection.Name = "cmbSection";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(label7, "label7");
-            label7.Name = "label7";
-            // 
-            // txtGuardianName
-            // 
-            resources.ApplyResources(txtGuardianName, "txtGuardianName");
-            txtGuardianName.Name = "txtGuardianName";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(label8, "label8");
-            label8.Name = "label8";
-            // 
-            // txtContact
-            // 
-            resources.ApplyResources(txtContact, "txtContact");
-            txtContact.Name = "txtContact";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(label9, "label9");
-            label9.Name = "label9";
-            // 
-            // txtAddress
-            // 
-            resources.ApplyResources(txtAddress, "txtAddress");
-            txtAddress.Name = "txtAddress";
+            pbStudentPhoto.BackColor = Color.FromArgb(230, 230, 230);
+            resources.ApplyResources(pbStudentPhoto, "pbStudentPhoto");
+            pbStudentPhoto.Name = "pbStudentPhoto";
+            pbStudentPhoto.TabStop = false;
             // 
             // btnUploadPhoto
             // 
@@ -285,21 +260,91 @@
             btnUploadPhoto.Name = "btnUploadPhoto";
             btnUploadPhoto.UseVisualStyleBackColor = false;
             // 
-            // pbStudentPhoto
+            // txtAddress
             // 
-            pbStudentPhoto.BackColor = Color.FromArgb(230, 230, 230);
-            resources.ApplyResources(pbStudentPhoto, "pbStudentPhoto");
-            pbStudentPhoto.Name = "pbStudentPhoto";
-            pbStudentPhoto.TabStop = false;
+            resources.ApplyResources(txtAddress, "txtAddress");
+            txtAddress.Name = "txtAddress";
             // 
-            // btnSaveEnrollment
+            // label9
             // 
-            btnSaveEnrollment.BackColor = Color.FromArgb(0, 135, 80);
-            btnSaveEnrollment.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(btnSaveEnrollment, "btnSaveEnrollment");
-            btnSaveEnrollment.ForeColor = Color.White;
-            btnSaveEnrollment.Name = "btnSaveEnrollment";
-            btnSaveEnrollment.UseVisualStyleBackColor = false;
+            resources.ApplyResources(label9, "label9");
+            label9.Name = "label9";
+            // 
+            // txtContact
+            // 
+            resources.ApplyResources(txtContact, "txtContact");
+            txtContact.Name = "txtContact";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
+            // 
+            // txtGuardianName
+            // 
+            resources.ApplyResources(txtGuardianName, "txtGuardianName");
+            txtGuardianName.Name = "txtGuardianName";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
+            // 
+            // cmbSection
+            // 
+            cmbSection.AutoCompleteSource = AutoCompleteSource.AllUrl;
+            cmbSection.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSection.FormattingEnabled = true;
+            resources.ApplyResources(cmbSection, "cmbSection");
+            cmbSection.Name = "cmbSection";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // dtpDOB
+            // 
+            dtpDOB.Format = DateTimePickerFormat.Short;
+            resources.ApplyResources(dtpDOB, "dtpDOB");
+            dtpDOB.Name = "dtpDOB";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
+            // cmbClassGrade
+            // 
+            cmbClassGrade.FormattingEnabled = true;
+            resources.ApplyResources(cmbClassGrade, "cmbClassGrade");
+            cmbClassGrade.Name = "cmbClassGrade";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
+            // 
+            // txtStudentName
+            // 
+            resources.ApplyResources(txtStudentName, "txtStudentName");
+            txtStudentName.Name = "txtStudentName";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.ForeColor = Color.FromArgb(0, 120, 70);
+            label1.Name = "label1";
             // 
             // student_register
             // 

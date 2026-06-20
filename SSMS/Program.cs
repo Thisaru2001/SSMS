@@ -12,9 +12,13 @@ namespace SSMS
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new teacher_register());
+            Application.Run(new studentAttendance());
+
+
 
            
+
+
         }
     }
 }
