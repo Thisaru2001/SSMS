@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            btnMarks = new Button();
+            lblName = new Label();
             lblTeacherName = new Label();
-            label12 = new Label();
             btnLogout = new Button();
             btnNoticeCreate = new Button();
             btnProfile = new Button();
@@ -53,13 +54,21 @@
             lblNotices = new Label();
             label8 = new Label();
             panel7 = new Panel();
+            label2 = new Label();
             dataGridViewclasses = new DataGridView();
             panel8 = new Panel();
+            panel1 = new Panel();
+            label12 = new Label();
+            label9 = new Label();
             lblNotice2 = new Label();
             btnViewAllNotices = new Button();
             lblNotice1 = new Label();
             label10 = new Label();
             label11 = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            panel9 = new Panel();
+            panel10 = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
@@ -69,13 +78,15 @@
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewclasses).BeginInit();
             panel8.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(btnMarks);
+            panel2.Controls.Add(lblName);
             panel2.Controls.Add(lblTeacherName);
-            panel2.Controls.Add(label12);
             panel2.Controls.Add(btnLogout);
             panel2.Controls.Add(btnNoticeCreate);
             panel2.Controls.Add(btnProfile);
@@ -86,8 +97,34 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(297, 899);
+            panel2.Size = new Size(423, 899);
             panel2.TabIndex = 1;
+            // 
+            // btnMarks
+            // 
+            btnMarks.BackColor = Color.White;
+            btnMarks.FlatAppearance.BorderSize = 0;
+            btnMarks.FlatStyle = FlatStyle.Flat;
+            btnMarks.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMarks.ForeColor = Color.Green;
+            btnMarks.Location = new Point(97, 422);
+            btnMarks.Name = "btnMarks";
+            btnMarks.Size = new Size(281, 59);
+            btnMarks.TabIndex = 11;
+            btnMarks.Text = "Add Marks";
+            btnMarks.TextAlign = ContentAlignment.MiddleLeft;
+            btnMarks.UseVisualStyleBackColor = false;
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.BackColor = Color.Honeydew;
+            lblName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.Location = new Point(190, 182);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(176, 41);
+            lblName.TabIndex = 10;
+            lblName.Text = "John Smith";
             // 
             // lblTeacherName
             // 
@@ -98,86 +135,94 @@
             lblTeacherName.Size = new Size(0, 28);
             lblTeacherName.TabIndex = 9;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(194, 224);
-            label12.Name = "label12";
-            label12.Size = new Size(85, 28);
-            label12.TabIndex = 8;
-            label12.Text = "Teacher";
-            // 
             // btnLogout
             // 
-            btnLogout.BackColor = Color.FromArgb(192, 255, 192);
-            btnLogout.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogout.ForeColor = Color.ForestGreen;
-            btnLogout.Location = new Point(39, 815);
+            btnLogout.BackColor = Color.White;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.Green;
+            btnLogout.Location = new Point(95, 830);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(204, 47);
+            btnLogout.Size = new Size(281, 47);
             btnLogout.TabIndex = 7;
             btnLogout.Text = "Logout";
+            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = false;
             // 
             // btnNoticeCreate
             // 
-            btnNoticeCreate.BackColor = Color.FromArgb(192, 255, 192);
-            btnNoticeCreate.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNoticeCreate.ForeColor = Color.ForestGreen;
-            btnNoticeCreate.Location = new Point(44, 720);
+            btnNoticeCreate.BackColor = Color.White;
+            btnNoticeCreate.FlatAppearance.BorderSize = 0;
+            btnNoticeCreate.FlatStyle = FlatStyle.Flat;
+            btnNoticeCreate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNoticeCreate.ForeColor = Color.Green;
+            btnNoticeCreate.Location = new Point(95, 726);
             btnNoticeCreate.Name = "btnNoticeCreate";
-            btnNoticeCreate.Size = new Size(201, 47);
+            btnNoticeCreate.Size = new Size(281, 47);
             btnNoticeCreate.TabIndex = 6;
             btnNoticeCreate.Text = "Notice Create";
+            btnNoticeCreate.TextAlign = ContentAlignment.MiddleLeft;
             btnNoticeCreate.UseVisualStyleBackColor = false;
             // 
             // btnProfile
             // 
-            btnProfile.BackColor = Color.FromArgb(192, 255, 192);
-            btnProfile.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProfile.ForeColor = Color.ForestGreen;
-            btnProfile.Location = new Point(39, 642);
+            btnProfile.BackColor = Color.White;
+            btnProfile.FlatAppearance.BorderSize = 0;
+            btnProfile.FlatStyle = FlatStyle.Flat;
+            btnProfile.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProfile.ForeColor = Color.Green;
+            btnProfile.Location = new Point(97, 641);
             btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(201, 48);
+            btnProfile.Size = new Size(281, 48);
             btnProfile.TabIndex = 5;
             btnProfile.Text = "Profile";
+            btnProfile.TextAlign = ContentAlignment.MiddleLeft;
             btnProfile.UseVisualStyleBackColor = false;
             // 
             // btnEsamShedule
             // 
-            btnEsamShedule.BackColor = Color.FromArgb(192, 255, 192);
-            btnEsamShedule.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEsamShedule.ForeColor = Color.ForestGreen;
-            btnEsamShedule.Location = new Point(39, 559);
+            btnEsamShedule.BackColor = Color.White;
+            btnEsamShedule.FlatAppearance.BorderSize = 0;
+            btnEsamShedule.FlatStyle = FlatStyle.Flat;
+            btnEsamShedule.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEsamShedule.ForeColor = Color.Green;
+            btnEsamShedule.Location = new Point(97, 577);
             btnEsamShedule.Name = "btnEsamShedule";
-            btnEsamShedule.Size = new Size(201, 58);
+            btnEsamShedule.Size = new Size(281, 58);
             btnEsamShedule.TabIndex = 4;
             btnEsamShedule.Text = "Exam Schedule";
+            btnEsamShedule.TextAlign = ContentAlignment.MiddleLeft;
             btnEsamShedule.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
-            btnUpdate.BackColor = Color.FromArgb(192, 255, 192);
-            btnUpdate.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.ForeColor = Color.ForestGreen;
-            btnUpdate.Location = new Point(44, 477);
+            btnUpdate.BackColor = Color.White;
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ForeColor = Color.Green;
+            btnUpdate.Location = new Point(95, 491);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(203, 62);
+            btnUpdate.Size = new Size(283, 62);
             btnUpdate.TabIndex = 3;
             btnUpdate.Text = "Student Detail Update";
+            btnUpdate.TextAlign = ContentAlignment.MiddleLeft;
             btnUpdate.UseVisualStyleBackColor = false;
             // 
             // btnStudentAttendance
             // 
-            btnStudentAttendance.BackColor = Color.FromArgb(192, 255, 192);
-            btnStudentAttendance.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnStudentAttendance.ForeColor = Color.ForestGreen;
-            btnStudentAttendance.Location = new Point(44, 344);
+            btnStudentAttendance.BackColor = Color.White;
+            btnStudentAttendance.FlatAppearance.BorderSize = 0;
+            btnStudentAttendance.FlatStyle = FlatStyle.Flat;
+            btnStudentAttendance.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStudentAttendance.ForeColor = Color.Green;
+            btnStudentAttendance.Location = new Point(95, 340);
             btnStudentAttendance.Name = "btnStudentAttendance";
-            btnStudentAttendance.Size = new Size(204, 61);
+            btnStudentAttendance.Size = new Size(235, 61);
             btnStudentAttendance.TabIndex = 1;
             btnStudentAttendance.Text = "Student Attendance";
+            btnStudentAttendance.TextAlign = ContentAlignment.MiddleLeft;
             btnStudentAttendance.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
@@ -204,27 +249,28 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(923, 111);
+            label3.Location = new Point(687, 141);
             label3.Name = "label3";
-            label3.Size = new Size(207, 38);
+            label3.Size = new Size(166, 38);
             label3.TabIndex = 2;
-            label3.Text = "Welcome back";
+            label3.Text = "John Smith";
             // 
             // panel3
             // 
             panel3.Controls.Add(lblTotalStudents);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(330, 204);
+            panel3.Location = new Point(446, 246);
             panel3.Name = "panel3";
-            panel3.Size = new Size(278, 160);
+            panel3.Size = new Size(262, 155);
             panel3.TabIndex = 4;
             // 
             // lblTotalStudents
             // 
             lblTotalStudents.AutoSize = true;
-            lblTotalStudents.Location = new Point(70, 19);
+            lblTotalStudents.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalStudents.Location = new Point(97, 43);
             lblTotalStudents.Name = "lblTotalStudents";
-            lblTotalStudents.Size = new Size(0, 20);
+            lblTotalStudents.Size = new Size(0, 41);
             lblTotalStudents.TabIndex = 1;
             // 
             // label5
@@ -241,17 +287,18 @@
             // 
             panel4.Controls.Add(lblPresent);
             panel4.Controls.Add(label6);
-            panel4.Location = new Point(627, 204);
+            panel4.Location = new Point(726, 246);
             panel4.Name = "panel4";
-            panel4.Size = new Size(276, 160);
+            panel4.Size = new Size(267, 159);
             panel4.TabIndex = 5;
             // 
             // lblPresent
             // 
             lblPresent.AutoSize = true;
-            lblPresent.Location = new Point(71, 20);
+            lblPresent.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPresent.Location = new Point(109, 43);
             lblPresent.Name = "lblPresent";
-            lblPresent.Size = new Size(0, 20);
+            lblPresent.Size = new Size(0, 41);
             lblPresent.TabIndex = 1;
             // 
             // label6
@@ -268,17 +315,18 @@
             // 
             panel5.Controls.Add(lblAbsent);
             panel5.Controls.Add(label7);
-            panel5.Location = new Point(923, 203);
+            panel5.Location = new Point(999, 246);
             panel5.Name = "panel5";
-            panel5.Size = new Size(264, 160);
+            panel5.Size = new Size(264, 159);
             panel5.TabIndex = 6;
             // 
             // lblAbsent
             // 
             lblAbsent.AutoSize = true;
-            lblAbsent.Location = new Point(81, 21);
+            lblAbsent.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAbsent.Location = new Point(81, 53);
             lblAbsent.Name = "lblAbsent";
-            lblAbsent.Size = new Size(0, 20);
+            lblAbsent.Size = new Size(0, 41);
             lblAbsent.TabIndex = 1;
             // 
             // label7
@@ -295,17 +343,18 @@
             // 
             panel6.Controls.Add(lblNotices);
             panel6.Controls.Add(label8);
-            panel6.Location = new Point(1193, 203);
+            panel6.Location = new Point(1269, 246);
             panel6.Name = "panel6";
-            panel6.Size = new Size(296, 156);
+            panel6.Size = new Size(265, 155);
             panel6.TabIndex = 7;
             // 
             // lblNotices
             // 
             lblNotices.AutoSize = true;
-            lblNotices.Location = new Point(65, 17);
+            lblNotices.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNotices.Location = new Point(101, 64);
             lblNotices.Name = "lblNotices";
-            lblNotices.Size = new Size(0, 20);
+            lblNotices.Size = new Size(0, 41);
             lblNotices.TabIndex = 1;
             // 
             // label8
@@ -320,34 +369,73 @@
             // 
             // panel7
             // 
+            panel7.Controls.Add(label2);
             panel7.Controls.Add(dataGridViewclasses);
             panel7.Controls.Add(btnAddMarks);
-            panel7.Location = new Point(314, 387);
+            panel7.Location = new Point(457, 428);
             panel7.Name = "panel7";
-            panel7.Size = new Size(815, 395);
+            panel7.Size = new Size(691, 384);
             panel7.TabIndex = 8;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(42, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 31);
+            label2.TabIndex = 3;
+            label2.Text = "Today's Classes";
             // 
             // dataGridViewclasses
             // 
             dataGridViewclasses.BackgroundColor = SystemColors.ControlLightLight;
             dataGridViewclasses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewclasses.Location = new Point(33, 62);
+            dataGridViewclasses.Location = new Point(40, 62);
             dataGridViewclasses.Name = "dataGridViewclasses";
             dataGridViewclasses.RowHeadersWidth = 51;
-            dataGridViewclasses.Size = new Size(766, 292);
+            dataGridViewclasses.Size = new Size(579, 307);
             dataGridViewclasses.TabIndex = 1;
             // 
             // panel8
             // 
             panel8.BackColor = Color.Transparent;
+            panel8.Controls.Add(panel1);
             panel8.Controls.Add(lblNotice2);
             panel8.Controls.Add(btnViewAllNotices);
             panel8.Controls.Add(lblNotice1);
             panel8.Controls.Add(label10);
-            panel8.Location = new Point(1135, 387);
+            panel8.Location = new Point(1169, 428);
             panel8.Name = "panel8";
-            panel8.Size = new Size(365, 395);
+            panel8.Size = new Size(365, 384);
             panel8.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(label9);
+            panel1.Location = new Point(16, 76);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(328, 206);
+            panel1.TabIndex = 4;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(29, 77);
+            label12.Name = "label12";
+            label12.Size = new Size(0, 28);
+            label12.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(30, 33);
+            label9.Name = "label9";
+            label9.Size = new Size(0, 20);
+            label9.TabIndex = 0;
             // 
             // lblNotice2
             // 
@@ -360,12 +448,12 @@
             // 
             // btnViewAllNotices
             // 
-            btnViewAllNotices.BackColor = Color.FromArgb(192, 255, 192);
+            btnViewAllNotices.BackColor = Color.White;
             btnViewAllNotices.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnViewAllNotices.ForeColor = Color.ForestGreen;
-            btnViewAllNotices.Location = new Point(106, 289);
+            btnViewAllNotices.ForeColor = Color.Green;
+            btnViewAllNotices.Location = new Point(16, 308);
             btnViewAllNotices.Name = "btnViewAllNotices";
-            btnViewAllNotices.Size = new Size(176, 44);
+            btnViewAllNotices.Size = new Size(272, 52);
             btnViewAllNotices.TabIndex = 2;
             btnViewAllNotices.Text = "View ALL Notices";
             btnViewAllNotices.UseVisualStyleBackColor = false;
@@ -382,8 +470,9 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(32, 15);
+            label10.Location = new Point(28, 31);
             label10.Name = "label10";
             label10.Size = new Size(173, 31);
             label10.TabIndex = 0;
@@ -392,11 +481,46 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(754, 815);
+            label11.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(631, 836);
             label11.Name = "label11";
-            label11.Size = new Size(293, 20);
+            label11.Size = new Size(449, 31);
             label11.TabIndex = 10;
             label11.Text = "© 2025 Smart School Management System";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(467, 192);
+            label4.Name = "label4";
+            label4.Size = new Size(510, 31);
+            label4.TabIndex = 12;
+            label4.Text = "Here's what's Happenning on your classes today.";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(467, 138);
+            label1.Name = "label1";
+            label1.Size = new Size(221, 41);
+            label1.TabIndex = 13;
+            label1.Text = "Welcome Back";
+            // 
+            // panel9
+            // 
+            panel9.Location = new Point(1184, 14);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(365, 81);
+            panel9.TabIndex = 14;
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(467, 25);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(47, 70);
+            panel10.TabIndex = 15;
             // 
             // Teacher_Dashbaord
             // 
@@ -406,6 +530,10 @@
             BackgroundImage = Properties.Resources.teacher_dashboard;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1577, 899);
+            Controls.Add(panel10);
+            Controls.Add(panel9);
+            Controls.Add(label1);
+            Controls.Add(label4);
             Controls.Add(label11);
             Controls.Add(panel8);
             Controls.Add(panel7);
@@ -416,6 +544,8 @@
             Controls.Add(label3);
             Controls.Add(panel2);
             DoubleBuffered = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Teacher_Dashbaord";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Teacher dashboard";
@@ -431,9 +561,12 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewclasses).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -470,6 +603,15 @@
         private Label label11;
         private Label lblNotice2;
         private Label lblTeacherName;
+        private Label lblName;
+        private Button btnMarks;
+        private Label label2;
+        private Panel panel1;
+        private Label label4;
+        private Label label1;
         private Label label12;
+        private Label label9;
+        private Panel panel9;
+        private Panel panel10;
     }
 }
