@@ -26,5 +26,10 @@ namespace SSMS
         {
             // Add your logic for label1 here
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
