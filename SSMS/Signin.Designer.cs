@@ -43,19 +43,19 @@
             // txtStudentId
             // 
             txtStudentId.BorderStyle = BorderStyle.None;
-            txtStudentId.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtStudentId.Font = new Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtStudentId.Location = new Point(864, 350);
             txtStudentId.Name = "txtStudentId";
-            txtStudentId.Size = new Size(385, 40);
+            txtStudentId.Size = new Size(385, 38);
             txtStudentId.TabIndex = 0;
             // 
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Font = new Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(864, 459);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(385, 40);
+            txtPassword.Size = new Size(385, 38);
             txtPassword.TabIndex = 1;
             // 
             // btnLogin
@@ -69,6 +69,7 @@
             btnLogin.Size = new Size(467, 77);
             btnLogin.TabIndex = 2;
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click_1;
             // 
             // panel1
             // 
@@ -111,7 +112,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(937, 55);
+            label2.Location = new Point(763, 47);
             label2.Name = "label2";
             label2.Size = new Size(187, 31);
             label2.TabIndex = 6;
@@ -125,9 +126,9 @@
             label3.ForeColor = Color.Green;
             label3.Location = new Point(800, 305);
             label3.Name = "label3";
-            label3.Size = new Size(121, 31);
+            label3.Size = new Size(111, 31);
             label3.TabIndex = 7;
-            label3.Text = "Username";
+            label3.Text = "SchoolID";
             // 
             // label4
             // 
