@@ -144,19 +144,17 @@ namespace SSMS
                 {
                     conn.Open();
 
+                    // ✅ UPDATED QUERY: Only loads 4 columns (Student ID, First Name, Grade, Section)
                     string query = @"SELECT 
-                                        s.student_id AS 'Student ID',
-                                        u.firstname AS 'First Name',
-                                        u.lastname AS 'Last Name',
-                                        CONCAT('Grade ', g.grade_level_number) AS 'Grade',
-                                        g.section AS 'Section',
-                                        u.email AS 'Email',
-                                        u.phone AS 'Phone'
-                                     FROM student s
-                                     INNER JOIN users u ON s.users_id = u.id
-                                     INNER JOIN grade g ON s.grade_id = g.id
-                                     WHERE s.status = 'Active'
-                                     ORDER BY g.grade_level_number, g.section, u.firstname";
+                                s.student_id AS 'Student ID',
+                                u.firstname AS 'First Name',
+                                CONCAT('Grade ', g.grade_level_number) AS 'Grade',
+                                g.section AS 'Section'
+                             FROM student s
+                             INNER JOIN users u ON s.users_id = u.id
+                             INNER JOIN grade g ON s.grade_id = g.id
+                             WHERE s.status = 'Active'
+                             ORDER BY g.grade_level_number, g.section, u.firstname";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -165,7 +163,40 @@ namespace SSMS
                         dt.Load(reader);
 
                         dgvStudentList.DataSource = dt;
+                        if (dgvStudentList.Rows.Count > 1)
+                        {
+                            dgvStudentList.ClearSelection();
+                            dgvStudentList.Rows[1].Selected = true;   // Select second row
+                            dgvStudentList.CurrentCell = dgvStudentList.Rows[1].Cells[0];
+                        }
                         dgvStudentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                        // ==========================================
+                        // 🎨 BEAUTIFUL TABLE DESIGN
+                        // ==========================================
+
+                        dgvStudentList.RowHeadersVisible = false;
+                        dgvStudentList.BackgroundColor = Color.White;
+                        dgvStudentList.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 240);
+                        dgvStudentList.RowsDefaultCellStyle.BackColor = Color.White;
+                        dgvStudentList.RowsDefaultCellStyle.ForeColor = Color.Black;
+                        dgvStudentList.DefaultCellStyle.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+                        dgvStudentList.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 135, 80);
+                        dgvStudentList.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                        // ✅ FIX: Turn this OFF so your custom green header actually works!
+                        dgvStudentList.EnableHeadersVisualStyles = false;
+
+                        dgvStudentList.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 135, 80);
+                        dgvStudentList.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                        dgvStudentList.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+                        dgvStudentList.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgvStudentList.ColumnHeadersHeight = 45;
+
+                        dgvStudentList.RowTemplate.Height = 40;
+                        dgvStudentList.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                        dgvStudentList.GridColor = Color.FromArgb(220, 220, 220);
+                        dgvStudentList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     }
                 }
                 catch (Exception ex)
@@ -323,5 +354,10 @@ namespace SSMS
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }
         private void label3_Click(object sender, EventArgs e) { }
+
+        private void dgvStudentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
