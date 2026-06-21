@@ -73,7 +73,7 @@ namespace SSMS
                             dashboard = new Principal_Dashbaord(loginResult.UserId);
                             break;
                         case "teacher":
-                            dashboard = new Teacher_Dashbaord(); // Pass ID here if needed
+                            dashboard = new Teacher_Dashbaord(loginResult.UserId); // Pass ID here if needed
                             break;
                         case "student":
                             MessageBox.Show("Student dashboard is not implemented yet.",

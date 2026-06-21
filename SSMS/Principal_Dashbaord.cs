@@ -171,9 +171,7 @@ namespace SSMS
                         }
                         dgvStudentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                        // ==========================================
-                        // 🎨 BEAUTIFUL TABLE DESIGN
-                        // ==========================================
+                        
 
                         dgvStudentList.RowHeadersVisible = false;
                         dgvStudentList.BackgroundColor = Color.White;

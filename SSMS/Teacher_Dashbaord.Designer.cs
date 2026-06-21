@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            panel11 = new Panel();
+            pictureBox1 = new PictureBox();
             btnMarks = new Button();
             lblName = new Label();
             lblTeacherName = new Label();
@@ -70,6 +72,8 @@
             panel9 = new Panel();
             panel10 = new Panel();
             panel2.SuspendLayout();
+            panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -84,6 +88,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(panel11);
             panel2.Controls.Add(btnMarks);
             panel2.Controls.Add(lblName);
             panel2.Controls.Add(lblTeacherName);
@@ -100,6 +105,25 @@
             panel2.Size = new Size(423, 899);
             panel2.TabIndex = 1;
             // 
+            // panel11
+            // 
+            panel11.BackColor = Color.White;
+            panel11.Controls.Add(pictureBox1);
+            panel11.Location = new Point(45, 155);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(136, 138);
+            panel11.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(136, 138);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // btnMarks
             // 
             btnMarks.BackColor = Color.White;
@@ -107,20 +131,21 @@
             btnMarks.FlatStyle = FlatStyle.Flat;
             btnMarks.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnMarks.ForeColor = Color.Green;
-            btnMarks.Location = new Point(97, 422);
+            btnMarks.Location = new Point(97, 410);
             btnMarks.Name = "btnMarks";
             btnMarks.Size = new Size(281, 59);
             btnMarks.TabIndex = 11;
             btnMarks.Text = "Add Marks";
             btnMarks.TextAlign = ContentAlignment.MiddleLeft;
             btnMarks.UseVisualStyleBackColor = false;
+            btnMarks.Click += btnMarks_Click;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
             lblName.BackColor = Color.Honeydew;
             lblName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(190, 182);
+            lblName.Location = new Point(187, 182);
             lblName.Name = "lblName";
             lblName.Size = new Size(176, 41);
             lblName.TabIndex = 10;
@@ -142,13 +167,14 @@
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.Green;
-            btnLogout.Location = new Point(95, 830);
+            btnLogout.Location = new Point(95, 827);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(281, 47);
             btnLogout.TabIndex = 7;
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnNoticeCreate
             // 
@@ -157,13 +183,14 @@
             btnNoticeCreate.FlatStyle = FlatStyle.Flat;
             btnNoticeCreate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNoticeCreate.ForeColor = Color.Green;
-            btnNoticeCreate.Location = new Point(95, 726);
+            btnNoticeCreate.Location = new Point(95, 711);
             btnNoticeCreate.Name = "btnNoticeCreate";
             btnNoticeCreate.Size = new Size(281, 47);
             btnNoticeCreate.TabIndex = 6;
             btnNoticeCreate.Text = "Notice Create";
             btnNoticeCreate.TextAlign = ContentAlignment.MiddleLeft;
             btnNoticeCreate.UseVisualStyleBackColor = false;
+            btnNoticeCreate.Click += btnNoticeCreate_Click;
             // 
             // btnProfile
             // 
@@ -172,13 +199,14 @@
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProfile.ForeColor = Color.Green;
-            btnProfile.Location = new Point(97, 641);
+            btnProfile.Location = new Point(97, 640);
             btnProfile.Name = "btnProfile";
             btnProfile.Size = new Size(281, 48);
             btnProfile.TabIndex = 5;
             btnProfile.Text = "Profile";
             btnProfile.TextAlign = ContentAlignment.MiddleLeft;
             btnProfile.UseVisualStyleBackColor = false;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnEsamShedule
             // 
@@ -187,13 +215,14 @@
             btnEsamShedule.FlatStyle = FlatStyle.Flat;
             btnEsamShedule.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEsamShedule.ForeColor = Color.Green;
-            btnEsamShedule.Location = new Point(97, 577);
+            btnEsamShedule.Location = new Point(97, 560);
             btnEsamShedule.Name = "btnEsamShedule";
             btnEsamShedule.Size = new Size(281, 58);
             btnEsamShedule.TabIndex = 4;
             btnEsamShedule.Text = "Exam Schedule";
             btnEsamShedule.TextAlign = ContentAlignment.MiddleLeft;
             btnEsamShedule.UseVisualStyleBackColor = false;
+            btnEsamShedule.Click += btnEsamShedule_Click;
             // 
             // btnUpdate
             // 
@@ -202,13 +231,14 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.ForeColor = Color.Green;
-            btnUpdate.Location = new Point(95, 491);
+            btnUpdate.Location = new Point(95, 487);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(283, 62);
             btnUpdate.TabIndex = 3;
             btnUpdate.Text = "Student Detail Update";
             btnUpdate.TextAlign = ContentAlignment.MiddleLeft;
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnStudentAttendance
             // 
@@ -224,6 +254,7 @@
             btnStudentAttendance.Text = "Student Attendance";
             btnStudentAttendance.TextAlign = ContentAlignment.MiddleLeft;
             btnStudentAttendance.UseVisualStyleBackColor = false;
+            btnStudentAttendance.Click += btnStudentAttendance_Click;
             // 
             // pictureBox2
             // 
@@ -249,7 +280,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(687, 141);
+            label3.Location = new Point(684, 141);
             label3.Name = "label3";
             label3.Size = new Size(166, 38);
             label3.TabIndex = 2;
@@ -391,10 +422,10 @@
             // 
             dataGridViewclasses.BackgroundColor = SystemColors.ControlLightLight;
             dataGridViewclasses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewclasses.Location = new Point(40, 62);
+            dataGridViewclasses.Location = new Point(20, 62);
             dataGridViewclasses.Name = "dataGridViewclasses";
             dataGridViewclasses.RowHeadersWidth = 51;
-            dataGridViewclasses.Size = new Size(579, 307);
+            dataGridViewclasses.Size = new Size(649, 307);
             dataGridViewclasses.TabIndex = 1;
             // 
             // panel8
@@ -551,6 +582,8 @@
             Text = "Teacher dashboard";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -613,5 +646,7 @@
         private Label label9;
         private Panel panel9;
         private Panel panel10;
+        private PictureBox pictureBox1;
+        private Panel panel11;
     }
 }
