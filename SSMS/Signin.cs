@@ -13,9 +13,10 @@ namespace SSMS
 
         private void Signin_Load(object sender, EventArgs e)
         {
-            txtStudentId.Clear(); // Changed from txtStudentId to match your UI
+            txtStudentId.Clear();
             txtPassword.Clear();
             label2.Text = "";
+            txtStudentId.Focus();
         }
 
         // Checkbox for showing/hiding password
@@ -37,15 +38,11 @@ namespace SSMS
                 return;
             }
 
-            // 2. ID Format Check (Letters/Year/Number)
-            if (!System.Text.RegularExpressions.Regex.IsMatch(loginId, @"^[A-Za-z]+/\d{4}/\d+$"))
-            {
-                label2.Text = "Invalid Format! Use: Letters/Year/ID (e.g. PS/2022/1)";
-                label2.ForeColor = Color.Red;
-                txtStudentId.Focus();
-                txtStudentId.SelectAll();
-                return;
-            }
+            // FIXED: Removed ID format validation that was blocking your actual IDs
+            // Your system uses different formats:
+            // - Teacher: TSMITH-20260120-123
+            // - Student: 2024-1015 or 1001
+            // - Principal: P001
 
             // 3. CREATE THE HELPER AND CALL IT
             DatabaseHelper dbHelper = new DatabaseHelper();
@@ -53,10 +50,6 @@ namespace SSMS
 
             if (!string.IsNullOrEmpty(userRole))
             {
-                // ==========================================================
-                // 🟢 LOGIN SUCCESSFUL - 4 SECOND WAIT LOGIC
-                // ==========================================================
-
                 label2.Text = "Login Successful!";
                 label2.ForeColor = Color.Green;
 
@@ -65,44 +58,86 @@ namespace SSMS
 
                 // Create a timer
                 System.Windows.Forms.Timer delayTimer = new System.Windows.Forms.Timer();
-                delayTimer.Interval = 1000; 
+                delayTimer.Interval = 2000; // 2 seconds
                 delayTimer.Tick += (s, t) =>
                 {
-                    // This code runs AFTER 4 seconds
-                    delayTimer.Stop(); // Stop the timer so it doesn't repeat
-
-                    txtPassword.Clear();
-                    txtPassword.Focus();
+                    delayTimer.Stop();
+                    delayTimer.Dispose(); // Properly dispose timer
 
                     // Open different dashboards based on their role!
-                    if (userRole.ToLower() == "principal")
+                    Form dashboard = null;
+
+                    switch (userRole.ToLower())
                     {
-                        Principal_Dashbaord dashboard = new Principal_Dashbaord();
-                        dashboard.Show();
-                    }
-                    else if (userRole.ToLower() == "teacher")
-                    {
-                        Teacher_Dashbaord dashboard = new Teacher_Dashbaord();
-                        dashboard.Show();
-                    }
-                    else if (userRole.ToLower() == "student")
-                    {
-                        // Student_Dashbaord dashboard = new Student_Dashbaord();
-                        // dashboard.Show();
+                        case "principal":
+                            dashboard = new Principal_Dashbaord();
+                            break;
+                        case "teacher":
+                            dashboard = new Teacher_Dashbaord();
+                            break;
+                        case "student":
+                            MessageBox.Show("Student dashboard is not implemented yet.",
+                                "Coming Soon",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            this.Show();
+                            txtStudentId.Clear();
+                            txtPassword.Clear();
+                            btnLogin.Enabled = true;
+                            txtStudentId.Focus();
+                            return;
+                        default:
+                            MessageBox.Show("Unknown user role: " + userRole,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                            this.Show();
+                            btnLogin.Enabled = true;
+                            return;
                     }
 
-                    this.Hide(); // Hide login form
+                    if (dashboard != null)
+                    {
+                        // Show login form again when dashboard closes
+                        dashboard.FormClosed += (senderForm, args) =>
+                        {
+                            this.Show();
+                            txtStudentId.Clear();
+                            txtPassword.Clear();
+                            btnLogin.Enabled = true;
+                            txtStudentId.Focus();
+                        };
+
+                        dashboard.Show();
+                        this.Hide();
+                    }
                 };
 
                 // Start the timer
                 delayTimer.Start();
-                // ==========================================================
             }
             else
             {
                 label2.Text = "Invalid ID or Password";
                 label2.ForeColor = Color.Red;
                 txtPassword.Clear();
+                txtPassword.Focus();
+            }
+        }
+
+        // Allow Enter key to trigger login
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnLogin_Click_1(sender, e);
+            }
+        }
+
+        private void txtStudentId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
                 txtPassword.Focus();
             }
         }

@@ -28,390 +28,422 @@
         /// </summary>
         private void InitializeComponent()
         {
-            splitContainer1 = new SplitContainer();
-            btnLogout = new Button();
-            btnNoticeCreate = new Button();
-            btnProfile = new Button();
-            btnTeacherAttendance = new Button();
-            btnTimetable = new Button();
-            btnStudentRegister = new Button();
-            btnTeacherRegister = new Button();
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            btnRegisterTeacher = new Button();
-            button1 = new Button();
-            cmbQualification = new ComboBox();
-            label6 = new Label();
-            txtPhone = new TextBox();
-            label5 = new Label();
-            txtEmail = new TextBox();
-            label4 = new Label();
-            txtLastName = new TextBox();
-            label3 = new Label();
-            txtFirstName = new TextBox();
-            label2 = new Label();
-            pictureBox2 = new PictureBox();
-            label1 = new Label();
             lblSystemTitle = new Label();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            panel1 = new Panel();
+            pf = new PictureBox();
+            label9 = new Label();
+            txtAd = new RichTextBox();
+            label6 = new Label();
+            label1 = new Label();
+            dtpDob = new DateTimePicker();
+            rbFemale = new RadioButton();
+            rbMale = new RadioButton();
+            txtLname = new TextBox();
+            txtNic = new TextBox();
+            nextBtn = new Button();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            txtFname = new TextBox();
+            label2 = new Label();
+            tabPage2 = new TabPage();
+            vid = new Label();
+            gnsid = new Button();
+            submitBtn = new Button();
+            txtEmail = new TextBox();
+            label8 = new Label();
+            txtCn = new TextBox();
+            label7 = new Label();
+            openFileDialog1 = new OpenFileDialog();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pf).BeginInit();
+            tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.Controls.Add(btnLogout);
-            splitContainer1.Panel1.Controls.Add(btnNoticeCreate);
-            splitContainer1.Panel1.Controls.Add(btnProfile);
-            splitContainer1.Panel1.Controls.Add(btnTeacherAttendance);
-            splitContainer1.Panel1.Controls.Add(btnTimetable);
-            splitContainer1.Panel1.Controls.Add(btnStudentRegister);
-            splitContainer1.Panel1.Controls.Add(btnTeacherRegister);
-            splitContainer1.Panel1.Controls.Add(pictureBox1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.BackColor = Color.FromArgb(245, 247, 245);
-            splitContainer1.Panel2.Controls.Add(panel1);
-            splitContainer1.Panel2.Controls.Add(pictureBox2);
-            splitContainer1.Panel2.Controls.Add(label1);
-            splitContainer1.Panel2.Controls.Add(lblSystemTitle);
-            splitContainer1.Panel2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            splitContainer1.Panel2.ForeColor = Color.FromArgb(0, 120, 70);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
-            splitContainer1.Size = new Size(1150, 708);
-            splitContainer1.SplitterDistance = 280;
-            splitContainer1.TabIndex = 0;
-            // 
-            // btnLogout
-            // 
-            btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogout.Location = new Point(0, 430);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(280, 45);
-            btnLogout.TabIndex = 7;
-            btnLogout.Text = "Logout";
-            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
-            btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // btnNoticeCreate
-            // 
-            btnNoticeCreate.FlatAppearance.BorderSize = 0;
-            btnNoticeCreate.FlatStyle = FlatStyle.Flat;
-            btnNoticeCreate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNoticeCreate.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNoticeCreate.Location = new Point(0, 385);
-            btnNoticeCreate.Name = "btnNoticeCreate";
-            btnNoticeCreate.Size = new Size(280, 45);
-            btnNoticeCreate.TabIndex = 6;
-            btnNoticeCreate.Text = "Notice Create";
-            btnNoticeCreate.TextAlign = ContentAlignment.MiddleLeft;
-            btnNoticeCreate.UseVisualStyleBackColor = true;
-            // 
-            // btnProfile
-            // 
-            btnProfile.FlatAppearance.BorderSize = 0;
-            btnProfile.FlatStyle = FlatStyle.Flat;
-            btnProfile.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProfile.Location = new Point(0, 340);
-            btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(280, 45);
-            btnProfile.TabIndex = 5;
-            btnProfile.Text = "Profile";
-            btnProfile.TextAlign = ContentAlignment.MiddleLeft;
-            btnProfile.UseVisualStyleBackColor = true;
-            // 
-            // btnTeacherAttendance
-            // 
-            btnTeacherAttendance.FlatAppearance.BorderSize = 0;
-            btnTeacherAttendance.FlatStyle = FlatStyle.Flat;
-            btnTeacherAttendance.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTeacherAttendance.Location = new Point(0, 295);
-            btnTeacherAttendance.Name = "btnTeacherAttendance";
-            btnTeacherAttendance.Size = new Size(280, 45);
-            btnTeacherAttendance.TabIndex = 4;
-            btnTeacherAttendance.Text = "Teacher Attendence";
-            btnTeacherAttendance.TextAlign = ContentAlignment.MiddleLeft;
-            btnTeacherAttendance.UseVisualStyleBackColor = true;
-            // 
-            // btnTimetable
-            // 
-            btnTimetable.FlatAppearance.BorderSize = 0;
-            btnTimetable.FlatStyle = FlatStyle.Flat;
-            btnTimetable.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTimetable.Location = new Point(0, 250);
-            btnTimetable.Name = "btnTimetable";
-            btnTimetable.Size = new Size(280, 45);
-            btnTimetable.TabIndex = 3;
-            btnTimetable.Text = "Timetable";
-            btnTimetable.TextAlign = ContentAlignment.MiddleLeft;
-            btnTimetable.UseVisualStyleBackColor = true;
-            btnTimetable.Click += button1_Click;
-            // 
-            // btnStudentRegister
-            // 
-            btnStudentRegister.FlatAppearance.BorderSize = 0;
-            btnStudentRegister.FlatStyle = FlatStyle.Flat;
-            btnStudentRegister.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnStudentRegister.Location = new Point(0, 205);
-            btnStudentRegister.Name = "btnStudentRegister";
-            btnStudentRegister.Size = new Size(280, 45);
-            btnStudentRegister.TabIndex = 2;
-            btnStudentRegister.Text = "Student Register";
-            btnStudentRegister.TextAlign = ContentAlignment.MiddleLeft;
-            btnStudentRegister.UseVisualStyleBackColor = true;
-            // 
-            // btnTeacherRegister
-            // 
-            btnTeacherRegister.BackColor = Color.FromArgb(225, 245, 230);
-            btnTeacherRegister.FlatAppearance.BorderSize = 0;
-            btnTeacherRegister.FlatStyle = FlatStyle.Flat;
-            btnTeacherRegister.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTeacherRegister.ForeColor = Color.FromArgb(0, 120, 70);
-            btnTeacherRegister.Location = new Point(0, 160);
-            btnTeacherRegister.Name = "btnTeacherRegister";
-            btnTeacherRegister.Size = new Size(280, 45);
-            btnTeacherRegister.TabIndex = 1;
-            btnTeacherRegister.Text = "Teacher Register";
-            btnTeacherRegister.TextAlign = ContentAlignment.MiddleLeft;
-            btnTeacherRegister.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(90, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 100);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnRegisterTeacher);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(cmbQualification);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(txtPhone);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(txtEmail);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(txtLastName);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(txtFirstName);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(40, 120);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 560);
-            panel1.TabIndex = 3;
-            // 
-            // btnRegisterTeacher
-            // 
-            btnRegisterTeacher.BackColor = Color.FromArgb(0, 135, 80);
-            btnRegisterTeacher.FlatAppearance.BorderSize = 0;
-            btnRegisterTeacher.FlatStyle = FlatStyle.Flat;
-            btnRegisterTeacher.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegisterTeacher.ForeColor = Color.White;
-            btnRegisterTeacher.Location = new Point(420, 460);
-            btnRegisterTeacher.Name = "btnRegisterTeacher";
-            btnRegisterTeacher.Size = new Size(340, 42);
-            btnRegisterTeacher.TabIndex = 11;
-            btnRegisterTeacher.Text = "Register Teacher";
-            btnRegisterTeacher.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(0, 135, 80);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(420, 240);
-            button1.Name = "button1";
-            button1.Size = new Size(340, 42);
-            button1.TabIndex = 10;
-            button1.Text = "Generate Employee ID";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // cmbQualification
-            // 
-            cmbQualification.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbQualification.FormattingEnabled = true;
-            cmbQualification.Location = new Point(40, 245);
-            cmbQualification.Name = "cmbQualification";
-            cmbQualification.Size = new Size(340, 39);
-            cmbQualification.TabIndex = 9;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(40, 215);
-            label6.Name = "label6";
-            label6.Size = new Size(122, 25);
-            label6.TabIndex = 8;
-            label6.Text = "Qualification";
-            // 
-            // txtPhone
-            // 
-            txtPhone.Location = new Point(420, 155);
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(340, 38);
-            txtPhone.TabIndex = 7;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(420, 125);
-            label5.Name = "label5";
-            label5.Size = new Size(66, 25);
-            label5.TabIndex = 6;
-            label5.Text = "Phone";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(40, 155);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(340, 38);
-            txtEmail.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(40, 125);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 25);
-            label4.TabIndex = 4;
-            label4.Text = "Email";
-            // 
-            // txtLastName
-            // 
-            txtLastName.Location = new Point(420, 65);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(340, 38);
-            txtLastName.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(420, 35);
-            label3.Name = "label3";
-            label3.Size = new Size(91, 25);
-            label3.TabIndex = 2;
-            label3.Text = "Last Nme";
-            // 
-            // txtFirstName
-            // 
-            txtFirstName.Location = new Point(40, 65);
-            txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(340, 38);
-            txtFirstName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(40, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(103, 25);
-            label2.TabIndex = 0;
-            label2.Text = "First Name";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(800, 35);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(45, 45);
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(40, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(268, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Welcome, Mr. John (Principal)";
-            label1.Click += label1_Click;
             // 
             // lblSystemTitle
             // 
             lblSystemTitle.AutoSize = true;
-            lblSystemTitle.Location = new Point(40, 35);
+            lblSystemTitle.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSystemTitle.ForeColor = Color.Green;
+            lblSystemTitle.Location = new Point(490, 12);
             lblSystemTitle.Name = "lblSystemTitle";
-            lblSystemTitle.Size = new Size(454, 31);
-            lblSystemTitle.TabIndex = 0;
-            lblSystemTitle.Text = "SMART SCHOOL MANAGEMENT SYSTEM";
+            lblSystemTitle.Size = new Size(360, 46);
+            lblSystemTitle.TabIndex = 5;
+            lblSystemTitle.Text = "Teachers Registration";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tabControl1.Location = new Point(12, 72);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1307, 642);
+            tabControl1.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.White;
+            tabPage1.Controls.Add(panel1);
+            tabPage1.ForeColor = Color.Green;
+            tabPage1.Location = new Point(4, 40);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1299, 598);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "  Personal Info  ";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(pf);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(txtAd);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(dtpDob);
+            panel1.Controls.Add(rbFemale);
+            panel1.Controls.Add(rbMale);
+            panel1.Controls.Add(txtLname);
+            panel1.Controls.Add(txtNic);
+            panel1.Controls.Add(nextBtn);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtFname);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(6, 6);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1287, 561);
+            panel1.TabIndex = 5;
+            // 
+            // pf
+            // 
+            pf.BorderStyle = BorderStyle.Fixed3D;
+            pf.Location = new Point(948, 89);
+            pf.Name = "pf";
+            pf.Size = new Size(221, 206);
+            pf.SizeMode = PictureBoxSizeMode.StretchImage;
+            pf.TabIndex = 24;
+            pf.TabStop = false;
+            pf.Click += pf_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(977, 35);
+            label9.Name = "label9";
+            label9.Size = new Size(134, 28);
+            label9.TabIndex = 23;
+            label9.Text = "Profile Image";
+            // 
+            // txtAd
+            // 
+            txtAd.Location = new Point(468, 298);
+            txtAd.Name = "txtAd";
+            txtAd.Size = new Size(340, 40);
+            txtAd.TabIndex = 22;
+            txtAd.Text = "";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(468, 267);
+            label6.Name = "label6";
+            label6.Size = new Size(85, 28);
+            label6.TabIndex = 21;
+            label6.Text = "Address";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(468, 145);
+            label1.Name = "label1";
+            label1.Size = new Size(45, 28);
+            label1.TabIndex = 18;
+            label1.Text = "NIC";
+            // 
+            // dtpDob
+            // 
+            dtpDob.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDob.Location = new Point(23, 185);
+            dtpDob.Name = "dtpDob";
+            dtpDob.Size = new Size(387, 38);
+            dtpDob.TabIndex = 17;
+            // 
+            // rbFemale
+            // 
+            rbFemale.AutoSize = true;
+            rbFemale.Font = new Font("Segoe UI", 12F);
+            rbFemale.Location = new Point(147, 306);
+            rbFemale.Name = "rbFemale";
+            rbFemale.Size = new Size(95, 32);
+            rbFemale.TabIndex = 16;
+            rbFemale.TabStop = true;
+            rbFemale.Text = "Female";
+            rbFemale.UseVisualStyleBackColor = true;
+            rbFemale.CheckedChanged += f_CheckedChanged;
+            // 
+            // rbMale
+            // 
+            rbMale.AutoSize = true;
+            rbMale.Font = new Font("Segoe UI", 12F);
+            rbMale.Location = new Point(23, 306);
+            rbMale.Name = "rbMale";
+            rbMale.Size = new Size(76, 32);
+            rbMale.TabIndex = 15;
+            rbMale.TabStop = true;
+            rbMale.Text = "Male";
+            rbMale.UseVisualStyleBackColor = true;
+            rbMale.CheckedChanged += m_CheckedChanged;
+            // 
+            // txtLname
+            // 
+            txtLname.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtLname.Location = new Point(468, 66);
+            txtLname.Name = "txtLname";
+            txtLname.Size = new Size(340, 38);
+            txtLname.TabIndex = 14;
+            // 
+            // txtNic
+            // 
+            txtNic.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNic.Location = new Point(468, 185);
+            txtNic.Name = "txtNic";
+            txtNic.Size = new Size(340, 38);
+            txtNic.TabIndex = 13;
+            // 
+            // nextBtn
+            // 
+            nextBtn.BackColor = Color.FromArgb(0, 135, 80);
+            nextBtn.FlatAppearance.BorderSize = 0;
+            nextBtn.FlatStyle = FlatStyle.Flat;
+            nextBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nextBtn.ForeColor = Color.White;
+            nextBtn.Location = new Point(468, 429);
+            nextBtn.Name = "nextBtn";
+            nextBtn.Size = new Size(340, 42);
+            nextBtn.TabIndex = 11;
+            nextBtn.Text = "Next";
+            nextBtn.UseVisualStyleBackColor = false;
+            nextBtn.Click += nextbtn_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(23, 145);
+            label5.Name = "label5";
+            label5.Size = new Size(129, 28);
+            label5.TabIndex = 6;
+            label5.Text = "Date of Birth";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(23, 267);
+            label4.Name = "label4";
+            label4.Size = new Size(90, 31);
+            label4.TabIndex = 4;
+            label4.Text = "Gender";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(468, 35);
+            label3.Name = "label3";
+            label3.Size = new Size(98, 28);
+            label3.TabIndex = 2;
+            label3.Text = "Last Nme";
+            // 
+            // txtFname
+            // 
+            txtFname.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFname.Location = new Point(23, 67);
+            txtFname.Name = "txtFname";
+            txtFname.Size = new Size(340, 38);
+            txtFname.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(23, 35);
+            label2.Name = "label2";
+            label2.Size = new Size(110, 28);
+            label2.TabIndex = 0;
+            label2.Text = "First Name";
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = Color.White;
+            tabPage2.Controls.Add(vid);
+            tabPage2.Controls.Add(gnsid);
+            tabPage2.Controls.Add(submitBtn);
+            tabPage2.Controls.Add(txtEmail);
+            tabPage2.Controls.Add(label8);
+            tabPage2.Controls.Add(txtCn);
+            tabPage2.Controls.Add(label7);
+            tabPage2.Location = new Point(4, 40);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1299, 598);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "   Contact Info  ";
+            // 
+            // vid
+            // 
+            vid.AutoSize = true;
+            vid.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            vid.ForeColor = Color.Black;
+            vid.Location = new Point(529, 282);
+            vid.Name = "vid";
+            vid.Size = new Size(188, 28);
+            vid.TabIndex = 31;
+            vid.Text = "<<GENERATE ID>>";
+            // 
+            // gnsid
+            // 
+            gnsid.BackColor = Color.FromArgb(0, 0, 192);
+            gnsid.FlatAppearance.BorderSize = 0;
+            gnsid.FlatStyle = FlatStyle.Flat;
+            gnsid.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gnsid.ForeColor = Color.White;
+            gnsid.Location = new Point(460, 189);
+            gnsid.Name = "gnsid";
+            gnsid.Size = new Size(340, 42);
+            gnsid.TabIndex = 30;
+            gnsid.Text = "Generate School ID";
+            gnsid.UseVisualStyleBackColor = false;
+            gnsid.Click += gnsid_Click;
+            // 
+            // submitBtn
+            // 
+            submitBtn.BackColor = Color.FromArgb(0, 135, 80);
+            submitBtn.FlatAppearance.BorderSize = 0;
+            submitBtn.FlatStyle = FlatStyle.Flat;
+            submitBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            submitBtn.ForeColor = Color.White;
+            submitBtn.Location = new Point(510, 438);
+            submitBtn.Name = "submitBtn";
+            submitBtn.Size = new Size(235, 89);
+            submitBtn.TabIndex = 29;
+            submitBtn.Text = "Submit";
+            submitBtn.UseVisualStyleBackColor = false;
+            submitBtn.Click += submitbtn_Click;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.Location = new Point(124, 95);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(340, 38);
+            txtEmail.TabIndex = 28;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(214, 47);
+            label8.Name = "label8";
+            label8.Size = new Size(139, 28);
+            label8.TabIndex = 27;
+            label8.Text = "Email Address";
+            label8.Click += label8_Click;
+            // 
+            // txtCn
+            // 
+            txtCn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCn.Location = new Point(787, 95);
+            txtCn.Name = "txtCn";
+            txtCn.Size = new Size(340, 38);
+            txtCn.TabIndex = 26;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(874, 47);
+            label7.Name = "label7";
+            label7.Size = new Size(162, 28);
+            label7.TabIndex = 25;
+            label7.Text = "Contact Number";
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // teacher_register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1150, 708);
-            Controls.Add(splitContainer1);
+            BackColor = Color.White;
+            ClientSize = new Size(1331, 724);
+            Controls.Add(tabControl1);
+            Controls.Add(lblSystemTitle);
             Name = "teacher_register";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Text = "Teacher Registration";
+            Load += teacher_register_Load;
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pf).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private SplitContainer splitContainer1;
-        private Button btnStudentRegister;
-        private Button btnTeacherRegister;
-        private PictureBox pictureBox1;
-        private Button btnTeacherAttendance;
-        private Button btnTimetable;
-        private Button btnProfile;
-        private Button btnLogout;
-        private Button btnNoticeCreate;
         private Label lblSystemTitle;
-        private Label label1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
         private Panel panel1;
-        private PictureBox pictureBox2;
-        private Label label4;
-        private TextBox txtLastName;
-        private Label label3;
-        private TextBox txtFirstName;
-        private Label label2;
-        private Label label6;
-        private TextBox txtPhone;
+        private TextBox txtLname;
+        private TextBox txtNic;
+        private Button nextBtn;
         private Label label5;
+        private Label label4;
+        private Label label3;
+        private TextBox txtFname;
+        private Label label2;
+        private TabPage tabPage2;
+        private DateTimePicker dtpDob;
+        private RadioButton rbFemale;
+        private RadioButton rbMale;
+        private RichTextBox txtAd;
+        private Label label6;
+        private Label label1;
+        private OpenFileDialog openFileDialog1;
         private TextBox txtEmail;
-        private Button btnRegisterTeacher;
-        private Button button1;
-        private ComboBox cmbQualification;
+        private Label label8;
+        private TextBox txtCn;
+        private Label label7;
+        private PictureBox pf;
+        private Label label9;
+        private Button submitBtn;
+        private Button gnsid;
+        private Label vid;
     }
 }

@@ -55,6 +55,7 @@
             txtPassword.Font = new Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(864, 459);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(385, 38);
             txtPassword.TabIndex = 1;
             // 
