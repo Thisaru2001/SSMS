@@ -38,17 +38,16 @@ namespace SSMS
                 return;
             }
 
-            // FIXED: Removed ID format validation that was blocking your actual IDs
-            // Your system uses different formats:
-            // - Teacher: TSMITH-20260120-123
-            // - Student: 2024-1015 or 1001
-            // - Principal: P001
-
-            // 3. CREATE THE HELPER AND CALL IT
+            // 2. Validate login using DatabaseHelper (Get Role AND ID)
             DatabaseHelper dbHelper = new DatabaseHelper();
-            string userRole = dbHelper.ValidateLoginAndGetRole(loginId, password);
+            var loginResult = dbHelper.ValidateLoginAndGetDetails(loginId, password);
 
-            if (!string.IsNullOrEmpty(userRole))
+            /* 
+               NOTE: You must change your DatabaseHelper.cs to return TWO things:
+               Method signature: public (string Role, int UserId) ValidateLoginAndGetDetails(string loginId, string password)
+            */
+
+            if (loginResult.Role != null)
             {
                 label2.Text = "Login Successful!";
                 label2.ForeColor = Color.Green;
@@ -67,13 +66,14 @@ namespace SSMS
                     // Open different dashboards based on their role!
                     Form dashboard = null;
 
-                    switch (userRole.ToLower())
+                    switch (loginResult.Role.ToLower())
                     {
                         case "principal":
-                            dashboard = new Principal_Dashbaord();
+                            // ✅ PASS THE USER ID TO THE CONSTRUCTOR!
+                            dashboard = new Principal_Dashbaord(loginResult.UserId);
                             break;
                         case "teacher":
-                            dashboard = new Teacher_Dashbaord();
+                            dashboard = new Teacher_Dashbaord(); // Pass ID here if needed
                             break;
                         case "student":
                             MessageBox.Show("Student dashboard is not implemented yet.",
@@ -87,7 +87,7 @@ namespace SSMS
                             txtStudentId.Focus();
                             return;
                         default:
-                            MessageBox.Show("Unknown user role: " + userRole,
+                            MessageBox.Show("Unknown user role: " + loginResult.Role,
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);

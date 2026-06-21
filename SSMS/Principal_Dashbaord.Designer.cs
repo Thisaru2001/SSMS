@@ -34,30 +34,37 @@
             btnTeacherAttendance = new Button();
             btnProfile = new Button();
             btnNoticeCreation = new Button();
-            lblName = new Label();
+            prinName = new Label();
             btnViewNotices = new Button();
-            label3 = new Label();
-            label4 = new Label();
             label6 = new Label();
-            label7 = new Label();
             panel3 = new Panel();
             button1 = new Button();
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            label5 = new Label();
+            todayStudentAttendancePresentage = new Label();
+            todayTeachersAttendancePresentage = new Label();
             label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            splitContainer1 = new SplitContainer();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            label11 = new Label();
+            panel2 = new Panel();
+            dgvStudentList = new DataGridView();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            totalStudents = new Label();
+            totalTeachers = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label10 = new Label();
+            panel6 = new Panel();
+            label9 = new Label();
+            panel7 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudentList).BeginInit();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // btnTeacherRegister
@@ -92,6 +99,7 @@
             btnStudentRegister.Text = "Student Register";
             btnStudentRegister.TextAlign = ContentAlignment.MiddleLeft;
             btnStudentRegister.UseVisualStyleBackColor = false;
+            btnStudentRegister.Click += btnStudentRegister_Click;
             // 
             // btnTimeTableCreation
             // 
@@ -108,6 +116,7 @@
             btnTimeTableCreation.Text = "Time Table Creation";
             btnTimeTableCreation.TextAlign = ContentAlignment.MiddleLeft;
             btnTimeTableCreation.UseVisualStyleBackColor = false;
+            btnTimeTableCreation.Click += btnTimeTableCreation_Click;
             // 
             // btnTeacherAttendance
             // 
@@ -124,6 +133,7 @@
             btnTeacherAttendance.Text = "Teacher Attendance";
             btnTeacherAttendance.TextAlign = ContentAlignment.MiddleLeft;
             btnTeacherAttendance.UseVisualStyleBackColor = false;
+            btnTeacherAttendance.Click += btnTeacherAttendance_Click;
             // 
             // btnProfile
             // 
@@ -157,19 +167,20 @@
             btnNoticeCreation.Text = "Notice Creation";
             btnNoticeCreation.TextAlign = ContentAlignment.MiddleLeft;
             btnNoticeCreation.UseVisualStyleBackColor = false;
+            btnNoticeCreation.Click += btnNoticeCreation_Click;
             // 
-            // lblName
+            // prinName
             // 
-            lblName.AutoSize = true;
-            lblName.BackColor = Color.White;
-            lblName.FlatStyle = FlatStyle.Flat;
-            lblName.Font = new Font("Segoe UI", 18.3396225F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(651, 151);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(280, 42);
-            lblName.TabIndex = 7;
-            lblName.Text = "<principal name>";
-            lblName.Click += lblName_Click;
+            prinName.AutoSize = true;
+            prinName.BackColor = Color.White;
+            prinName.FlatStyle = FlatStyle.Flat;
+            prinName.Font = new Font("Segoe UI", 18.3396225F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            prinName.Location = new Point(651, 151);
+            prinName.Name = "prinName";
+            prinName.Size = new Size(280, 42);
+            prinName.TabIndex = 7;
+            prinName.Text = "<principal name>";
+            prinName.Click += lblName_Click;
             // 
             // btnViewNotices
             // 
@@ -185,30 +196,7 @@
             btnViewNotices.TabIndex = 17;
             btnViewNotices.Text = "View All Notices";
             btnViewNotices.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Green;
-            label3.Location = new Point(611, 351);
-            label3.Name = "label3";
-            label3.Size = new Size(134, 25);
-            label3.TabIndex = 19;
-            label3.Text = "Total Students";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.White;
-            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            label4.ForeColor = Color.Green;
-            label4.Location = new Point(882, 351);
-            label4.Name = "label4";
-            label4.Size = new Size(134, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Total Students";
+            btnViewNotices.Click += btnViewNotices_Click;
             // 
             // label6
             // 
@@ -221,19 +209,6 @@
             label6.Size = new Size(354, 45);
             label6.TabIndex = 22;
             label6.Text = "Principal's Dashboard";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.WhiteSmoke;
-            label7.FlatStyle = FlatStyle.Flat;
-            label7.Font = new Font("Segoe UI", 14.2641506F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(203, 205);
-            label7.Name = "label7";
-            label7.Size = new Size(219, 32);
-            label7.TabIndex = 23;
-            label7.Text = "<principal name>";
-            label7.Click += label7_Click;
             // 
             // panel3
             // 
@@ -259,6 +234,7 @@
             button1.Text = "Logout";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -269,41 +245,29 @@
             panel1.Size = new Size(49, 47);
             panel1.TabIndex = 26;
             // 
-            // label1
+            // todayStudentAttendancePresentage
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            label1.ForeColor = Color.Green;
-            label1.Location = new Point(1144, 351);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 50);
-            label1.TabIndex = 27;
-            label1.Text = "  Total \r\nClasses";
+            todayStudentAttendancePresentage.AutoSize = true;
+            todayStudentAttendancePresentage.BackColor = Color.White;
+            todayStudentAttendancePresentage.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            todayStudentAttendancePresentage.ForeColor = Color.Gray;
+            todayStudentAttendancePresentage.Location = new Point(1377, 351);
+            todayStudentAttendancePresentage.Name = "todayStudentAttendancePresentage";
+            todayStudentAttendancePresentage.Size = new Size(111, 50);
+            todayStudentAttendancePresentage.TabIndex = 28;
+            todayStudentAttendancePresentage.Text = "Attendance\r\n (Student)";
             // 
-            // label2
+            // todayTeachersAttendancePresentage
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            label2.ForeColor = Color.Green;
-            label2.Location = new Point(1377, 351);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 50);
-            label2.TabIndex = 28;
-            label2.Text = "Attendance\r\n (Student)";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.White;
-            label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            label5.ForeColor = Color.Green;
-            label5.Location = new Point(1627, 351);
-            label5.Name = "label5";
-            label5.Size = new Size(111, 50);
-            label5.TabIndex = 29;
-            label5.Text = "Attendance\r\n (Teachers)";
+            todayTeachersAttendancePresentage.AutoSize = true;
+            todayTeachersAttendancePresentage.BackColor = Color.White;
+            todayTeachersAttendancePresentage.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            todayTeachersAttendancePresentage.ForeColor = Color.Gray;
+            todayTeachersAttendancePresentage.Location = new Point(1627, 351);
+            todayTeachersAttendancePresentage.Name = "todayTeachersAttendancePresentage";
+            todayTeachersAttendancePresentage.Size = new Size(111, 50);
+            todayTeachersAttendancePresentage.TabIndex = 29;
+            todayTeachersAttendancePresentage.Text = "Attendance\r\n (Teachers)";
             // 
             // label8
             // 
@@ -317,65 +281,176 @@
             label8.TabIndex = 30;
             label8.Text = "Recent Notices";
             // 
-            // label9
+            // pictureBox1
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.White;
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.Black;
-            label9.Location = new Point(3, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(285, 30);
-            label9.TabIndex = 31;
-            label9.Text = "<< Date and time >>";
+            pictureBox1.Location = new Point(67, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(183, 131);
+            pictureBox1.TabIndex = 34;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Green;
+            label11.Location = new Point(18, 4);
+            label11.Name = "label11";
+            label11.Size = new Size(142, 41);
+            label11.TabIndex = 35;
+            label11.Text = "Students";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(label11);
+            panel2.Location = new Point(539, 476);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(256, 50);
+            panel2.TabIndex = 36;
+            // 
+            // dgvStudentList
+            // 
+            dgvStudentList.AllowUserToAddRows = false;
+            dgvStudentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvStudentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStudentList.Dock = DockStyle.Fill;
+            dgvStudentList.Location = new Point(0, 0);
+            dgvStudentList.Name = "dgvStudentList";
+            dgvStudentList.ReadOnly = true;
+            dgvStudentList.RowHeadersVisible = false;
+            dgvStudentList.RowHeadersWidth = 51;
+            dgvStudentList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvStudentList.Size = new Size(786, 304);
+            dgvStudentList.TabIndex = 37;
+            // 
+            // panel4
+            // 
+            panel4.AutoScroll = true;
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(dgvStudentList);
+            panel4.Location = new Point(539, 538);
+            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(786, 304);
+            panel4.TabIndex = 38;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.BackgroundImage = Properties.Resources.Screenshot_2026_06_21_115404;
+            panel5.Controls.Add(pictureBox1);
+            panel5.Location = new Point(58, 172);
+            panel5.Margin = new Padding(3, 4, 3, 4);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(329, 137);
+            panel5.TabIndex = 39;
+            // 
+            // totalStudents
+            // 
+            totalStudents.AutoSize = true;
+            totalStudents.BackColor = Color.White;
+            totalStudents.FlatStyle = FlatStyle.Flat;
+            totalStudents.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalStudents.Location = new Point(628, 304);
+            totalStudents.Name = "totalStudents";
+            totalStudents.Size = new Size(60, 46);
+            totalStudents.TabIndex = 40;
+            totalStudents.Text = "00";
+            // 
+            // totalTeachers
+            // 
+            totalTeachers.AutoSize = true;
+            totalTeachers.BackColor = Color.White;
+            totalTeachers.FlatStyle = FlatStyle.Flat;
+            totalTeachers.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalTeachers.Location = new Point(902, 305);
+            totalTeachers.Name = "totalTeachers";
+            totalTeachers.Size = new Size(60, 46);
+            totalTeachers.TabIndex = 41;
+            totalTeachers.Text = "00";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.White;
+            label13.FlatStyle = FlatStyle.Flat;
+            label13.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(1157, 305);
+            label13.Name = "label13";
+            label13.Size = new Size(60, 46);
+            label13.TabIndex = 42;
+            label13.Text = "00";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.White;
+            label14.FlatStyle = FlatStyle.Flat;
+            label14.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(1385, 304);
+            label14.Name = "label14";
+            label14.Size = new Size(69, 46);
+            label14.TabIndex = 41;
+            label14.Text = "0%";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.White;
+            label15.FlatStyle = FlatStyle.Flat;
+            label15.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(1638, 304);
+            label15.Name = "label15";
+            label15.Size = new Size(69, 46);
+            label15.TabIndex = 43;
+            label15.Text = "0%";
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.None;
-            label10.AutoSize = true;
             label10.BackColor = Color.White;
+            label10.Dock = DockStyle.Fill;
             label10.Font = new Font("MS UI Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(82, 42);
+            label10.Location = new Point(0, 0);
             label10.Name = "label10";
-            label10.Size = new Size(134, 23);
-            label10.TabIndex = 32;
+            label10.Size = new Size(297, 150);
+            label10.TabIndex = 44;
             label10.Text = "notice body";
             // 
-            // splitContainer1
+            // panel6
             // 
-            splitContainer1.Location = new Point(1422, 538);
-            splitContainer1.Name = "splitContainer1";
-            splitContainer1.Orientation = Orientation.Horizontal;
+            panel6.BackColor = Color.White;
+            panel6.Controls.Add(label10);
+            panel6.Location = new Point(1422, 538);
+            panel6.Margin = new Padding(3, 4, 3, 4);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(297, 150);
+            panel6.TabIndex = 45;
             // 
-            // splitContainer1.Panel1
+            // label9
             // 
-            splitContainer1.Panel1.Controls.Add(flowLayoutPanel1);
-            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
+            label9.BackColor = Color.White;
+            label9.Dock = DockStyle.Fill;
+            label9.FlatStyle = FlatStyle.Flat;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(0, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(316, 47);
+            label9.TabIndex = 46;
+            label9.Text = "date";
             // 
-            // splitContainer1.Panel2
+            // panel7
             // 
-            splitContainer1.Panel2.Controls.Add(label10);
-            splitContainer1.Size = new Size(328, 215);
-            splitContainer1.SplitterDistance = 46;
-            splitContainer1.TabIndex = 33;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(label9);
-            flowLayoutPanel1.Location = new Point(3, 3);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(322, 40);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(56, 170);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(141, 139);
-            pictureBox1.TabIndex = 34;
-            pictureBox1.TabStop = false;
+            panel7.BackColor = Color.White;
+            panel7.Controls.Add(label9);
+            panel7.Location = new Point(1422, 696);
+            panel7.Margin = new Padding(3, 4, 3, 4);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(316, 47);
+            panel7.TabIndex = 45;
             // 
             // Principal_Dashbaord
             // 
@@ -384,21 +459,25 @@
             BackgroundImage = Properties.Resources.principal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1831, 960);
-            Controls.Add(pictureBox1);
-            Controls.Add(splitContainer1);
+            Controls.Add(panel7);
+            Controls.Add(panel6);
+            Controls.Add(label15);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(totalTeachers);
+            Controls.Add(totalStudents);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel2);
             Controls.Add(label8);
-            Controls.Add(label5);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(todayTeachersAttendancePresentage);
+            Controls.Add(todayStudentAttendancePresentage);
             Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(panel3);
-            Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(btnViewNotices);
-            Controls.Add(lblName);
+            Controls.Add(prinName);
             Controls.Add(btnNoticeCreation);
             Controls.Add(btnProfile);
             Controls.Add(btnTeacherAttendance);
@@ -410,14 +489,14 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Principal_Dashbaord";
             Load += Principal_Dashbaord_Load;
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudentList).EndInit();
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -430,23 +509,29 @@
         private Button btnTeacherAttendance;
         private Button btnProfile;
         private Button btnNoticeCreation;
-        private Label lblName;
+        private Label prinName;
         private Button btnViewNotices;
-        private Label label3;
-        private Label label4;
         private Label label6;
-        private Label label7;
         private Panel panel3;
         private Button button1;
         private Panel panel1;
-        private Label label1;
-        private Label label2;
-        private Label label5;
+        private Label todayStudentAttendancePresentage;
+        private Label todayTeachersAttendancePresentage;
         private Label label8;
-        private Label label9;
-        private Label label10;
-        private SplitContainer splitContainer1;
-        private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox1;
+        private Label label11;
+        private Panel panel2;
+        private DataGridView dgvStudentList;
+        private Panel panel4;
+        private Panel panel5;
+        private Label totalStudents;
+        private Label totalTeachers;
+        private Label label13;
+        private Label label14;
+        private Label label15;
+        private Label label10;
+        private Panel panel6;
+        private Label label9;
+        private Panel panel7;
     }
 }

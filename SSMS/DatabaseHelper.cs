@@ -28,7 +28,8 @@ namespace SSMS
             }
         }
 
-        public string ValidateLoginAndGetRole(string studentId, string password)
+        // ✅ CHANGED: Now returns BOTH the Role and the UserId as a Tuple
+        public (string Role, int UserId) ValidateLoginAndGetDetails(string studentId, string password)
         {
             using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
             {
@@ -36,11 +37,12 @@ namespace SSMS
                 {
                     conn.Open();
 
-                    // FIXED: Hash the password before comparing with database
+                    // Hash the password before comparing with database
                     string hashedPassword = HashPassword(password);
 
+                    // ⬇️ CHANGED: Select u.id AND u.role
                     string query = @"
-                        SELECT u.role 
+                        SELECT u.id, u.role 
                         FROM users u
                         LEFT JOIN principal p ON u.id = p.users_id AND p.employee_id = @studentId
                         LEFT JOIN teacher t ON u.id = t.users_id AND t.employee_id = @studentId
@@ -52,19 +54,26 @@ namespace SSMS
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@studentId", studentId);
-                        cmd.Parameters.AddWithValue("@password", hashedPassword); // FIXED: Use hashed password
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
 
-                        object result = cmd.ExecuteScalar();
-
-                        return result != null ? result.ToString() : null;
+                        // ⬇️ CHANGED: Use ExecuteReader to grab ID and Role
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int userId = reader.GetInt32("id");     // Get the User ID
+                                string role = reader.GetString("role"); // Get the Role
+                                return (role, userId);                 // Return both
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Database error: " + ex.Message);
-                    return null;
                 }
             }
+            return (null, 0); // Return null and 0 if login fails
         }
     }
 }
