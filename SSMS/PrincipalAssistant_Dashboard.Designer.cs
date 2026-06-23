@@ -1,6 +1,6 @@
 namespace SSMS
 {
-    partial class Principal_Dashbaord
+    partial class PrincipalAssistant_Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -181,9 +181,9 @@ namespace SSMS
             prinName.Font = new Font("Segoe UI", 18.3396225F, FontStyle.Bold, GraphicsUnit.Point, 0);
             prinName.Location = new Point(651, 151);
             prinName.Name = "prinName";
-            prinName.Size = new Size(280, 42);
+            prinName.Size = new Size(300, 42);
             prinName.TabIndex = 7;
-            prinName.Text = "<principal name>";
+            prinName.Text = "<assistance name>";
             prinName.Click += lblName_Click;
             // 
             // label6
@@ -194,9 +194,9 @@ namespace SSMS
             label6.ForeColor = Color.SeaGreen;
             label6.Location = new Point(557, 45);
             label6.Name = "label6";
-            label6.Size = new Size(354, 45);
+            label6.Size = new Size(525, 45);
             label6.TabIndex = 22;
-            label6.Text = "Principal's Dashboard";
+            label6.Text = "Principal's Assistance Dashbaord";
             // 
             // panel3
             // 
@@ -480,7 +480,7 @@ namespace SSMS
             panel8.Size = new Size(261, 68);
             panel8.TabIndex = 47;
             // 
-            // Principal_Dashbaord
+            // PrincipalAssistant_Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -513,10 +513,10 @@ namespace SSMS
             Controls.Add(btnStudentRegister);
             Controls.Add(btnTeacherRegister);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Principal_Dashbaord";
+            Name = "PrincipalAssistant_Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Principal_Dashbaord";
-            Load += Principal_Dashbaord_Load;
+            Load += PrincipalAssistant_Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace SSMS
 {
-    public partial class Principal_Dashbaord : Form
+    public partial class PrincipalAssistant_Dashboard : Form
     {
         
         private int _loggedInUserId;
 
         
-        public Principal_Dashbaord(int userId)
+        public PrincipalAssistant_Dashboard(int userId)
         {
             InitializeComponent();
             _loggedInUserId = userId; 
@@ -24,7 +24,7 @@ namespace SSMS
             return EnvironmentConfig.GetConnectionString();
         }
 
-        private void Principal_Dashbaord_Load(object sender, EventArgs e)
+        private void PrincipalAssistant_Dashboard_Load(object sender, EventArgs e)
         {
             LoadDateAndTime();
             LoadDashboardStats();
@@ -32,7 +32,9 @@ namespace SSMS
             LoadLatestNotice();
             LoadProfileImage();
             LoadName();
-            btnTimeTableCreation.Visible = false;
+            btnTeacherRegister.Visible = false;
+            btnStudentRegister.Visible = false;
+            btnTeacherAttendance.Visible = false;
         }
 
         private void LoadName()
@@ -299,28 +301,23 @@ namespace SSMS
         
         private void btnTeacherRegister_Click(object sender, EventArgs e)
         {
-            teacher_register teacher_Register = new teacher_register();
-            teacher_Register.ShowDialog();
-            LoadDashboardStats(); 
+            MessageBox.Show("Access Denied", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnStudentRegister_Click(object sender, EventArgs e)
         {
-            Student_register student_Register = new Student_register();
-            student_Register.ShowDialog();
-            LoadDashboardStats(); 
+            MessageBox.Show("Access Denied", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnTimeTableCreation_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This action is now managed by the Principal's Assistant.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            timetable timeTable = new timetable();
+            timeTable.ShowDialog();
         }
 
         private void btnTeacherAttendance_Click(object sender, EventArgs e)
         {
-            TeacherAttendance teacherAttendance = new TeacherAttendance();
-            teacherAttendance.ShowDialog();
-            LoadDashboardStats(); 
+            MessageBox.Show("Access Denied", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnNoticeCreation_Click(object sender, EventArgs e)
@@ -338,7 +335,7 @@ namespace SSMS
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            profile profileForm = new profile(_loggedInUserId, "principal");
+            profile profileForm = new profile(_loggedInUserId, "principal_assistant");
             profileForm.ShowDialog();
         }
 

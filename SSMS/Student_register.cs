@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +14,18 @@ namespace SSMS
 {
     public partial class Student_register : Form
     {
+        private string _editStudentId = "";
+        private bool _isEditMode = false;
+
         public Student_register()
         {
+            InitializeComponent();
+        }
+
+        public Student_register(string studentId, bool editMode)
+        {
+            _editStudentId = studentId;
+            _isEditMode = editMode;
             InitializeComponent();
         }
 
@@ -30,7 +40,7 @@ namespace SSMS
             label19.Text = "";
             tabControl1.SelectedIndex = 0;
 
-           // LoadGrades();
+           
             LoadSections();
             LoadRelationships();
             LoadGenders();
@@ -43,41 +53,101 @@ namespace SSMS
             NIC.Leave += NIC_Leave;
             textBox7.Leave += textBox7_Leave;
             textBox5.Leave += textBox5_Leave;
+
+            if (_isEditMode && !string.IsNullOrEmpty(_editStudentId))
+            {
+                this.Text = "Update Student";
+                LoadStudentData();
+            }
         }
 
-        //private void LoadGrades()
-        //{
-        //    using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
-        //    {
-        //        try
-        //        {
-        //            conn.Open();
-        //            string query = "SELECT DISTINCT grade_name FROM grade ORDER BY LENGTH(grade_name), grade_name";
+        private void LoadStudentData()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
+                {
+                    conn.Open();
+                    string query = @"SELECT u.*, s.*, g.grade_name 
+                                     FROM student s 
+                                     JOIN users u ON s.users_id = u.id 
+                                     JOIN grade g ON s.grade_id = g.id
+                                     WHERE s.student_id = @studentId";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@studentId", _editStudentId);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                label19.Text = reader["student_id"].ToString();
+                                txtStudentName.Text = reader["firstname"].ToString();
+                                textBox1.Text = reader["lastname"].ToString();
+                                dtpDOB.Value = reader["date_of_birth"] != DBNull.Value ? Convert.ToDateTime(reader["date_of_birth"]) : DateTime.Now;
+                                cmbSection.SelectedItem = reader["gender"].ToString();
+                                NIC.Text = reader["nic"].ToString();
+                                textBox7.Text = reader["email"].ToString();
+                                textBox2.Text = reader["address"].ToString();
 
-        //            using (MySqlCommand cmd = new MySqlCommand(query, conn))
-        //            {
-        //                using (MySqlDataReader reader = cmd.ExecuteReader())
-        //                {
-        //                    comboBox3.Items.Clear();
-        //                    while (reader.Read())
-        //                    {
-        //                        string gradeName = reader["grade_name"].ToString();
-        //                        // Remove "Grade " prefix to show just the number
-        //                        string displayText = gradeName.Replace("Grade ", "").Trim();
-        //                        comboBox3.Items.Add(displayText);
-        //                    }
-        //                    if (comboBox3.Items.Count > 0)
-        //                        comboBox3.SelectedIndex = 0;
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Error loading grades: " + ex.Message, "Error",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
+                                string parentName = reader["parent_name"].ToString();
+                                string[] names = parentName.Split(' ');
+                                if (names.Length > 0) textBox6.Text = names[0];
+                                if (names.Length > 1) textBox4.Text = names[1];
+
+                                string imagePath = reader["image_path"].ToString();
+                                if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+                                {
+                                    pbStudentPhoto.Image = System.Drawing.Image.FromFile(imagePath);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Student not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                this.Close();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         private void LoadSections()
         {
@@ -115,11 +185,11 @@ namespace SSMS
         private class GradeItem
         {
             public int Id { get; set; }
-            public string DisplayText { get; set; }
+            public string DisplayText { get; set; } = string.Empty;
             public override string ToString() { return DisplayText; }
         }
 
-        // ⬇️ THIS IS THE ONLY PICTUREBOX CLICK HANDLER - WITH THE WORKING CODE
+        
         private void pbStudentPhoto_Click_1(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -210,24 +280,35 @@ namespace SSMS
         private void button4_Click(object sender, EventArgs e)
         {
             if (!ValidateAllFields()) return;
-            if (!CheckDuplicateEntries()) return;
+            if (!_isEditMode && !CheckDuplicateEntries()) return;
 
             try
             {
-                if (SaveStudentToMySQL())
+                if (_isEditMode)
                 {
-                    DialogResult result = MessageBox.Show(
-                        $"Registration Complete!\n\nStudent ID: {label19.Text}\n" +
-                        $"Name: {txtStudentName.Text} {textBox1.Text}\n" +
-                        $"Guardian: {textBox6.Text} {textBox4.Text}\n" +
-                        $"Grade: {comboBox3.SelectedItem}\n\n" +
-                        $"Default Password: admin123\n\nRegister another student?",
-                        "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                    if (result == DialogResult.Yes)
-                        ClearAllFields();
-                    else
+                    if (UpdateStudentToMySQL())
+                    {
+                        MessageBox.Show("Student updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
+                    }
+                }
+                else
+                {
+                    if (SaveStudentToMySQL())
+                    {
+                        DialogResult result = MessageBox.Show(
+                            $"Registration Complete!\n\nStudent ID: {label19.Text}\n" +
+                            $"Name: {txtStudentName.Text} {textBox1.Text}\n" +
+                            $"Guardian: {textBox6.Text} {textBox4.Text}\n" +
+                            $"Grade: {comboBox3.SelectedItem}\n\n" +
+                            $"Default Password: admin123\n\nRegister another student?",
+                            "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result == DialogResult.Yes)
+                            ClearAllFields();
+                        else
+                            this.Close();
+                    }
                 }
             }
             catch (MySqlException ex)
@@ -431,6 +512,80 @@ namespace SSMS
             }
         }
 
+        private bool UpdateStudentToMySQL()
+        {
+            using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
+            {
+                conn.Open();
+                using (MySqlTransaction transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        string userQuery = @"UPDATE users u
+                                             JOIN student s ON u.id = s.users_id
+                                             SET u.firstname = @firstname, 
+                                                 u.lastname = @lastname, 
+                                                 u.email = @email, 
+                                                 u.nic = @nic, 
+                                                 u.address = @address, 
+                                                 u.gender = @gender, 
+                                                 u.date_of_birth = @date_of_birth
+                                             WHERE s.student_id = @student_id";
+
+                        using (MySqlCommand cmd = new MySqlCommand(userQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@student_id", _editStudentId);
+                            cmd.Parameters.AddWithValue("@firstname", txtStudentName.Text.Trim());
+                            cmd.Parameters.AddWithValue("@lastname", textBox1.Text.Trim());
+                            cmd.Parameters.AddWithValue("@email", textBox7.Text.Trim());
+                            cmd.Parameters.AddWithValue("@nic", string.IsNullOrWhiteSpace(NIC.Text) ? (object)DBNull.Value : NIC.Text.Trim());
+                            cmd.Parameters.AddWithValue("@address", textBox2.Text.Trim());
+                            cmd.Parameters.AddWithValue("@gender", cmbSection.SelectedItem?.ToString() ?? "Male");
+                            cmd.Parameters.AddWithValue("@date_of_birth", dtpDOB.Value.ToString("yyyy-MM-dd"));
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        
+                        string imagePath = SaveProfileImage();
+                        if (!string.IsNullOrEmpty(imagePath))
+                        {
+                            string imgQuery = "UPDATE users u JOIN student s ON u.id = s.users_id SET u.image_path = @img WHERE s.student_id = @student_id";
+                            using (MySqlCommand cmd = new MySqlCommand(imgQuery, conn, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@student_id", _editStudentId);
+                                cmd.Parameters.AddWithValue("@img", imagePath);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        int gradeId = GetGradeId(comboBox3.SelectedItem?.ToString() ?? "", comboBox4.SelectedItem?.ToString() ?? "");
+                        string guardianFullName = $"{textBox6.Text.Trim()} {textBox4.Text.Trim()}";
+
+                        string studentQuery = @"UPDATE student 
+                                                SET grade_id = @grade_id, 
+                                                    parent_name = @parent_name 
+                                                WHERE student_id = @student_id";
+
+                        using (MySqlCommand cmd = new MySqlCommand(studentQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@student_id", _editStudentId);
+                            cmd.Parameters.AddWithValue("@grade_id", gradeId);
+                            cmd.Parameters.AddWithValue("@parent_name", guardianFullName);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+
         private int GetGradeId(string gradeDisplayText, string section)
         {
             using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
@@ -440,7 +595,7 @@ namespace SSMS
                 if (gradeDisplayText.Contains("Grade "))
                     gradeName = gradeDisplayText.Replace("Grade ", "").Split('-')[0].Trim();
 
-                string query = "SELECT id FROM grade WHERE grade_name = @gradeName AND section = @section";
+                string query = "SELECT id FROM grade WHERE grade_level_number = @gradeName AND section = @section";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@gradeName", gradeName);

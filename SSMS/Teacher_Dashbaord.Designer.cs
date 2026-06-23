@@ -1,4 +1,4 @@
-﻿namespace SSMS
+namespace SSMS
 {
     partial class Teacher_Dashbaord
     {
@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            panel14 = new Panel();
+            panel12 = new Panel();
+            lblName = new Label();
             panel11 = new Panel();
             pictureBox1 = new PictureBox();
             btnMarks = new Button();
-            lblName = new Label();
             lblTeacherName = new Label();
             btnLogout = new Button();
             btnNoticeCreate = new Button();
             btnProfile = new Button();
             btnEsamShedule = new Button();
-            btnUpdate = new Button();
             btnStudentAttendance = new Button();
             pictureBox2 = new PictureBox();
             btnAddMarks = new Button();
@@ -71,7 +72,10 @@
             label1 = new Label();
             panel9 = new Panel();
             panel10 = new Panel();
+            panel13 = new Panel();
+            panel15 = new Panel();
             panel2.SuspendLayout();
+            panel12.SuspendLayout();
             panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -83,20 +87,21 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewclasses).BeginInit();
             panel8.SuspendLayout();
             panel1.SuspendLayout();
+            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(panel14);
+            panel2.Controls.Add(panel12);
             panel2.Controls.Add(panel11);
             panel2.Controls.Add(btnMarks);
-            panel2.Controls.Add(lblName);
             panel2.Controls.Add(lblTeacherName);
             panel2.Controls.Add(btnLogout);
             panel2.Controls.Add(btnNoticeCreate);
             panel2.Controls.Add(btnProfile);
             panel2.Controls.Add(btnEsamShedule);
-            panel2.Controls.Add(btnUpdate);
             panel2.Controls.Add(btnStudentAttendance);
             panel2.Controls.Add(pictureBox2);
             panel2.Dock = DockStyle.Left;
@@ -104,6 +109,35 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(423, 899);
             panel2.TabIndex = 1;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.White;
+            panel14.Location = new Point(45, 706);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(224, 70);
+            panel14.TabIndex = 18;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.Honeydew;
+            panel12.Controls.Add(lblName);
+            panel12.Location = new Point(187, 175);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(203, 48);
+            panel12.TabIndex = 17;
+            // 
+            // lblName
+            // 
+            lblName.BackColor = Color.White;
+            lblName.Dock = DockStyle.Fill;
+            lblName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.ForeColor = Color.Green;
+            lblName.Location = new Point(0, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(203, 48);
+            lblName.TabIndex = 10;
+            lblName.Text = "John Smith";
             // 
             // panel11
             // 
@@ -140,17 +174,6 @@
             btnMarks.UseVisualStyleBackColor = false;
             btnMarks.Click += btnMarks_Click;
             // 
-            // lblName
-            // 
-            lblName.AutoSize = true;
-            lblName.BackColor = Color.Honeydew;
-            lblName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(187, 182);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(176, 41);
-            lblName.TabIndex = 10;
-            lblName.Text = "John Smith";
-            // 
             // lblTeacherName
             // 
             lblTeacherName.AutoSize = true;
@@ -183,7 +206,7 @@
             btnNoticeCreate.FlatStyle = FlatStyle.Flat;
             btnNoticeCreate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNoticeCreate.ForeColor = Color.Green;
-            btnNoticeCreate.Location = new Point(95, 711);
+            btnNoticeCreate.Location = new Point(95, 637);
             btnNoticeCreate.Name = "btnNoticeCreate";
             btnNoticeCreate.Size = new Size(281, 47);
             btnNoticeCreate.TabIndex = 6;
@@ -199,7 +222,7 @@
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProfile.ForeColor = Color.Green;
-            btnProfile.Location = new Point(97, 640);
+            btnProfile.Location = new Point(97, 564);
             btnProfile.Name = "btnProfile";
             btnProfile.Size = new Size(281, 48);
             btnProfile.TabIndex = 5;
@@ -215,7 +238,7 @@
             btnEsamShedule.FlatStyle = FlatStyle.Flat;
             btnEsamShedule.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEsamShedule.ForeColor = Color.Green;
-            btnEsamShedule.Location = new Point(97, 560);
+            btnEsamShedule.Location = new Point(97, 490);
             btnEsamShedule.Name = "btnEsamShedule";
             btnEsamShedule.Size = new Size(281, 58);
             btnEsamShedule.TabIndex = 4;
@@ -223,22 +246,6 @@
             btnEsamShedule.TextAlign = ContentAlignment.MiddleLeft;
             btnEsamShedule.UseVisualStyleBackColor = false;
             btnEsamShedule.Click += btnEsamShedule_Click;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.BackColor = Color.White;
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.ForeColor = Color.Green;
-            btnUpdate.Location = new Point(95, 487);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(283, 62);
-            btnUpdate.TabIndex = 3;
-            btnUpdate.Text = "Student Detail Update";
-            btnUpdate.TextAlign = ContentAlignment.MiddleLeft;
-            btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnStudentAttendance
             // 
@@ -278,11 +285,12 @@
             // 
             // label3
             // 
-            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(684, 141);
+            label3.ForeColor = Color.Green;
+            label3.Location = new Point(0, 0);
             label3.Name = "label3";
-            label3.Size = new Size(166, 38);
+            label3.Size = new Size(233, 51);
             label3.TabIndex = 2;
             label3.Text = "John Smith";
             // 
@@ -392,11 +400,12 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(97, 116);
+            label8.ForeColor = Color.Red;
+            label8.Location = new Point(76, 116);
             label8.Name = "label8";
-            label8.Size = new Size(71, 25);
+            label8.Size = new Size(123, 25);
             label8.TabIndex = 0;
-            label8.Text = "Notices";
+            label8.Text = "Today Notices";
             // 
             // panel7
             // 
@@ -414,9 +423,9 @@
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(42, 22);
             label2.Name = "label2";
-            label2.Size = new Size(174, 31);
+            label2.Size = new Size(245, 31);
             label2.TabIndex = 3;
-            label2.Text = "Today's Classes";
+            label2.Text = "Today's Relief Periods";
             // 
             // dataGridViewclasses
             // 
@@ -431,6 +440,7 @@
             // panel8
             // 
             panel8.BackColor = Color.Transparent;
+            panel8.Controls.Add(panel15);
             panel8.Controls.Add(panel1);
             panel8.Controls.Add(lblNotice2);
             panel8.Controls.Add(btnViewAllNotices);
@@ -541,7 +551,7 @@
             // 
             // panel9
             // 
-            panel9.Location = new Point(1184, 14);
+            panel9.Location = new Point(1185, 14);
             panel9.Name = "panel9";
             panel9.Size = new Size(365, 81);
             panel9.TabIndex = 14;
@@ -553,6 +563,22 @@
             panel10.Size = new Size(47, 70);
             panel10.TabIndex = 15;
             // 
+            // panel13
+            // 
+            panel13.Controls.Add(label3);
+            panel13.Location = new Point(685, 138);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(233, 51);
+            panel13.TabIndex = 16;
+            // 
+            // panel15
+            // 
+            panel15.BackColor = Color.White;
+            panel15.Location = new Point(16, 302);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(272, 67);
+            panel15.TabIndex = 17;
+            // 
             // Teacher_Dashbaord
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -561,6 +587,7 @@
             BackgroundImage = Properties.Resources.teacher_dashboard;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1577, 899);
+            Controls.Add(panel13);
             Controls.Add(panel10);
             Controls.Add(panel9);
             Controls.Add(label1);
@@ -572,7 +599,6 @@
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
-            Controls.Add(label3);
             Controls.Add(panel2);
             DoubleBuffered = true;
             MaximizeBox = false;
@@ -580,8 +606,10 @@
             Name = "Teacher_Dashbaord";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Teacher dashboard";
+            Load += Teacher_Dashbaord_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel12.ResumeLayout(false);
             panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -600,6 +628,7 @@
             panel8.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel13.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -610,7 +639,6 @@
         private Button btnNoticeCreate;
         private Button btnProfile;
         private Button btnEsamShedule;
-        private Button btnUpdate;
         private Button btnAddMarks;
         private Button btnStudentAttendance;
         private Button btnLogout;
@@ -648,5 +676,9 @@
         private Panel panel10;
         private PictureBox pictureBox1;
         private Panel panel11;
+        private Panel panel12;
+        private Panel panel13;
+        private Panel panel14;
+        private Panel panel15;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SSMS
+namespace SSMS
 {
     partial class teacher_register
     {
@@ -63,9 +63,9 @@
             ((System.ComponentModel.ISupportInitialize)pf).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblSystemTitle
-            // 
+            
+            
+            
             lblSystemTitle.AutoSize = true;
             lblSystemTitle.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSystemTitle.ForeColor = Color.Green;
@@ -74,9 +74,9 @@
             lblSystemTitle.Size = new Size(360, 46);
             lblSystemTitle.TabIndex = 5;
             lblSystemTitle.Text = "Teachers Registration";
-            // 
-            // tabControl1
-            // 
+            
+            
+            
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -85,9 +85,9 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1307, 642);
             tabControl1.TabIndex = 7;
-            // 
-            // tabPage1
-            // 
+            
+            
+            
             tabPage1.BackColor = Color.White;
             tabPage1.Controls.Add(panel1);
             tabPage1.ForeColor = Color.Green;
@@ -97,9 +97,9 @@
             tabPage1.Size = new Size(1299, 598);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "  Personal Info  ";
-            // 
-            // panel1
-            // 
+            
+            
+            
             panel1.BackColor = Color.White;
             panel1.Controls.Add(pf);
             panel1.Controls.Add(label9);
@@ -121,9 +121,9 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1287, 561);
             panel1.TabIndex = 5;
-            // 
-            // pf
-            // 
+            
+            
+            
             pf.BorderStyle = BorderStyle.Fixed3D;
             pf.Location = new Point(948, 89);
             pf.Name = "pf";
@@ -132,9 +132,9 @@
             pf.TabIndex = 24;
             pf.TabStop = false;
             pf.Click += pf_Click;
-            // 
-            // label9
-            // 
+            
+            
+            
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             label9.ForeColor = Color.Black;
@@ -143,17 +143,17 @@
             label9.Size = new Size(134, 28);
             label9.TabIndex = 23;
             label9.Text = "Profile Image";
-            // 
-            // txtAd
-            // 
+            
+            
+            
             txtAd.Location = new Point(468, 298);
             txtAd.Name = "txtAd";
             txtAd.Size = new Size(340, 40);
             txtAd.TabIndex = 22;
             txtAd.Text = "";
-            // 
-            // label6
-            // 
+            
+            
+            
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
@@ -162,9 +162,9 @@
             label6.Size = new Size(85, 28);
             label6.TabIndex = 21;
             label6.Text = "Address";
-            // 
-            // label1
-            // 
+            
+            
+            
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
@@ -173,17 +173,17 @@
             label1.Size = new Size(45, 28);
             label1.TabIndex = 18;
             label1.Text = "NIC";
-            // 
-            // dtpDob
-            // 
+            
+            
+            
             dtpDob.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpDob.Location = new Point(23, 185);
             dtpDob.Name = "dtpDob";
             dtpDob.Size = new Size(387, 38);
             dtpDob.TabIndex = 17;
-            // 
-            // rbFemale
-            // 
+            
+            
+            
             rbFemale.AutoSize = true;
             rbFemale.Font = new Font("Segoe UI", 12F);
             rbFemale.Location = new Point(147, 306);
@@ -194,9 +194,9 @@
             rbFemale.Text = "Female";
             rbFemale.UseVisualStyleBackColor = true;
             rbFemale.CheckedChanged += f_CheckedChanged;
-            // 
-            // rbMale
-            // 
+            
+            
+            
             rbMale.AutoSize = true;
             rbMale.Font = new Font("Segoe UI", 12F);
             rbMale.Location = new Point(23, 306);
@@ -207,25 +207,25 @@
             rbMale.Text = "Male";
             rbMale.UseVisualStyleBackColor = true;
             rbMale.CheckedChanged += m_CheckedChanged;
-            // 
-            // txtLname
-            // 
+            
+            
+            
             txtLname.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtLname.Location = new Point(468, 66);
             txtLname.Name = "txtLname";
             txtLname.Size = new Size(340, 38);
             txtLname.TabIndex = 14;
-            // 
-            // txtNic
-            // 
+            
+            
+            
             txtNic.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNic.Location = new Point(468, 185);
             txtNic.Name = "txtNic";
             txtNic.Size = new Size(340, 38);
             txtNic.TabIndex = 13;
-            // 
-            // nextBtn
-            // 
+            
+            
+            
             nextBtn.BackColor = Color.FromArgb(0, 135, 80);
             nextBtn.FlatAppearance.BorderSize = 0;
             nextBtn.FlatStyle = FlatStyle.Flat;
@@ -238,9 +238,9 @@
             nextBtn.Text = "Next";
             nextBtn.UseVisualStyleBackColor = false;
             nextBtn.Click += nextbtn_Click;
-            // 
-            // label5
-            // 
+            
+            
+            
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
@@ -249,9 +249,9 @@
             label5.Size = new Size(129, 28);
             label5.TabIndex = 6;
             label5.Text = "Date of Birth";
-            // 
-            // label4
-            // 
+            
+            
+            
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
@@ -260,9 +260,9 @@
             label4.Size = new Size(90, 31);
             label4.TabIndex = 4;
             label4.Text = "Gender";
-            // 
-            // label3
-            // 
+            
+            
+            
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
@@ -271,17 +271,17 @@
             label3.Size = new Size(98, 28);
             label3.TabIndex = 2;
             label3.Text = "Last Nme";
-            // 
-            // txtFname
-            // 
+            
+            
+            
             txtFname.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFname.Location = new Point(23, 67);
             txtFname.Name = "txtFname";
             txtFname.Size = new Size(340, 38);
             txtFname.TabIndex = 1;
-            // 
-            // label2
-            // 
+            
+            
+            
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
@@ -290,9 +290,9 @@
             label2.Size = new Size(110, 28);
             label2.TabIndex = 0;
             label2.Text = "First Name";
-            // 
-            // tabPage2
-            // 
+            
+            
+            
             tabPage2.BackColor = Color.White;
             tabPage2.Controls.Add(vid);
             tabPage2.Controls.Add(gnsid);
@@ -307,9 +307,9 @@
             tabPage2.Size = new Size(1299, 598);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "   Contact Info  ";
-            // 
-            // vid
-            // 
+            
+            
+            
             vid.AutoSize = true;
             vid.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vid.ForeColor = Color.Black;
@@ -318,9 +318,9 @@
             vid.Size = new Size(188, 28);
             vid.TabIndex = 31;
             vid.Text = "<<GENERATE ID>>";
-            // 
-            // gnsid
-            // 
+            
+            
+            
             gnsid.BackColor = Color.FromArgb(0, 0, 192);
             gnsid.FlatAppearance.BorderSize = 0;
             gnsid.FlatStyle = FlatStyle.Flat;
@@ -333,9 +333,9 @@
             gnsid.Text = "Generate School ID";
             gnsid.UseVisualStyleBackColor = false;
             gnsid.Click += gnsid_Click;
-            // 
-            // submitBtn
-            // 
+            
+            
+            
             submitBtn.BackColor = Color.FromArgb(0, 135, 80);
             submitBtn.FlatAppearance.BorderSize = 0;
             submitBtn.FlatStyle = FlatStyle.Flat;
@@ -348,17 +348,17 @@
             submitBtn.Text = "Submit";
             submitBtn.UseVisualStyleBackColor = false;
             submitBtn.Click += submitbtn_Click;
-            // 
-            // txtEmail
-            // 
+            
+            
+            
             txtEmail.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.Location = new Point(124, 95);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(340, 38);
             txtEmail.TabIndex = 28;
-            // 
-            // label8
-            // 
+            
+            
+            
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
@@ -368,17 +368,17 @@
             label8.TabIndex = 27;
             label8.Text = "Email Address";
             label8.Click += label8_Click;
-            // 
-            // txtCn
-            // 
+            
+            
+            
             txtCn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtCn.Location = new Point(787, 95);
             txtCn.Name = "txtCn";
             txtCn.Size = new Size(340, 38);
             txtCn.TabIndex = 26;
-            // 
-            // label7
-            // 
+            
+            
+            
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
@@ -387,13 +387,13 @@
             label7.Size = new Size(162, 28);
             label7.TabIndex = 25;
             label7.Text = "Contact Number";
-            // 
-            // openFileDialog1
-            // 
+            
+            
+            
             openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // teacher_register
-            // 
+            
+            
+            
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;

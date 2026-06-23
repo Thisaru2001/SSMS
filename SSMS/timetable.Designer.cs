@@ -1,4 +1,4 @@
-﻿namespace SSMS
+namespace SSMS
 {
     partial class timetable
     {
@@ -34,8 +34,10 @@
             label3 = new Label();
             cmbStartTime = new ComboBox();
             dgvTimetable = new DataGridView();
+            DateCol = new DataGridViewTextBoxColumn();
             Time = new DataGridViewTextBoxColumn();
             Subject = new DataGridViewTextBoxColumn();
+            AbsentTeacherCol = new DataGridViewTextBoxColumn();
             Teacher = new DataGridViewTextBoxColumn();
             Room = new DataGridViewTextBoxColumn();
             cmbGrade = new ComboBox();
@@ -45,7 +47,9 @@
             cmbEndTime = new ComboBox();
             cmbSubject = new ComboBox();
             cmbTeacher = new ComboBox();
-            cnDay = new ComboBox();
+            dtpDate = new DateTimePicker();
+            lblAbsentTeacher = new Label();
+            cmbAbsentTeacher = new ComboBox();
             label8 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -71,21 +75,21 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(651, 25);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.Location = new Point(30, 15);
             label3.Name = "label3";
-            label3.Size = new Size(95, 38);
+            label3.Size = new Size(68, 28);
             label3.TabIndex = 0;
             label3.Text = "Grade";
             // 
             // cmbStartTime
             // 
             cmbStartTime.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStartTime.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbStartTime.Font = new Font("Segoe UI", 12F);
             cmbStartTime.FormattingEnabled = true;
-            cmbStartTime.Location = new Point(811, 316);
+            cmbStartTime.Location = new Point(570, 135);
             cmbStartTime.Name = "cmbStartTime";
-            cmbStartTime.Size = new Size(198, 39);
+            cmbStartTime.Size = new Size(240, 36);
             cmbStartTime.TabIndex = 1;
             cmbStartTime.SelectedIndexChanged += cmbFilterClass_SelectedIndexChanged;
             // 
@@ -93,24 +97,32 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvTimetable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvTimetable.BackgroundColor = Color.FromArgb(225, 245, 230);
+            dgvTimetable.BackgroundColor = Color.White;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 120, 70);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvTimetable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvTimetable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTimetable.Columns.AddRange(new DataGridViewColumn[] { Time, Subject, Teacher, Room });
-            dgvTimetable.GridColor = Color.FromArgb(180, 220, 195);
-            dgvTimetable.Location = new Point(36, 38);
+            dgvTimetable.Columns.AddRange(new DataGridViewColumn[] { DateCol, Time, Subject, AbsentTeacherCol, Teacher, Room });
+            dgvTimetable.EnableHeadersVisualStyles = false;
+            dgvTimetable.GridColor = Color.LightGray;
+            dgvTimetable.Location = new Point(30, 200);
             dgvTimetable.Name = "dgvTimetable";
             dgvTimetable.RowHeadersWidth = 51;
-            dgvTimetable.Size = new Size(555, 460);
+            dgvTimetable.Size = new Size(1280, 350);
             dgvTimetable.TabIndex = 4;
             dgvTimetable.CellContentClick += dgvTimetable_CellContentClick;
+            // 
+            // DateCol
+            // 
+            DateCol.HeaderText = "Date";
+            DateCol.MinimumWidth = 6;
+            DateCol.Name = "DateCol";
+            DateCol.Width = 125;
             // 
             // Time
             // 
@@ -125,6 +137,13 @@
             Subject.MinimumWidth = 6;
             Subject.Name = "Subject";
             Subject.Width = 125;
+            // 
+            // AbsentTeacherCol
+            // 
+            AbsentTeacherCol.HeaderText = "Absent Teacher";
+            AbsentTeacherCol.MinimumWidth = 6;
+            AbsentTeacherCol.Name = "AbsentTeacherCol";
+            AbsentTeacherCol.Width = 125;
             // 
             // Teacher
             // 
@@ -143,11 +162,11 @@
             // cmbGrade
             // 
             cmbGrade.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbGrade.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbGrade.Font = new Font("Segoe UI", 12F);
             cmbGrade.FormattingEnabled = true;
-            cmbGrade.Location = new Point(811, 27);
+            cmbGrade.Location = new Point(30, 50);
             cmbGrade.Name = "cmbGrade";
-            cmbGrade.Size = new Size(200, 39);
+            cmbGrade.Size = new Size(240, 36);
             cmbGrade.TabIndex = 7;
             cmbGrade.SelectedIndexChanged += cmbAssignClass_SelectedIndexChanged;
             // 
@@ -156,11 +175,11 @@
             btnSave.BackColor = Color.FromArgb(0, 135, 80);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1107, 402);
+            btnSave.Location = new Point(1110, 115);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(200, 70);
+            btnSave.Size = new Size(200, 60);
             btnSave.TabIndex = 11;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -173,7 +192,9 @@
             panel1.Controls.Add(cmbEndTime);
             panel1.Controls.Add(cmbSubject);
             panel1.Controls.Add(cmbTeacher);
-            panel1.Controls.Add(cnDay);
+            panel1.Controls.Add(dtpDate);
+            panel1.Controls.Add(lblAbsentTeacher);
+            panel1.Controls.Add(cmbAbsentTeacher);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
@@ -193,117 +214,137 @@
             // cmbRoom
             // 
             cmbRoom.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRoom.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbRoom.Font = new Font("Segoe UI", 12F);
             cmbRoom.FormattingEnabled = true;
-            cmbRoom.Location = new Point(1107, 315);
+            cmbRoom.Location = new Point(300, 135);
             cmbRoom.Name = "cmbRoom";
-            cmbRoom.Size = new Size(155, 39);
+            cmbRoom.Size = new Size(240, 36);
             cmbRoom.TabIndex = 23;
             cmbRoom.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             // 
             // cmbEndTime
             // 
             cmbEndTime.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbEndTime.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbEndTime.Font = new Font("Segoe UI", 12F);
             cmbEndTime.FormattingEnabled = true;
-            cmbEndTime.Location = new Point(809, 420);
+            cmbEndTime.Location = new Point(840, 135);
             cmbEndTime.Name = "cmbEndTime";
-            cmbEndTime.Size = new Size(200, 39);
+            cmbEndTime.Size = new Size(240, 36);
             cmbEndTime.TabIndex = 22;
             cmbEndTime.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             // 
             // cmbSubject
             // 
             cmbSubject.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSubject.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbSubject.Font = new Font("Segoe UI", 12F);
             cmbSubject.FormattingEnabled = true;
-            cmbSubject.Location = new Point(809, 120);
+            cmbSubject.Location = new Point(300, 50);
             cmbSubject.Name = "cmbSubject";
-            cmbSubject.Size = new Size(200, 39);
+            cmbSubject.Size = new Size(240, 36);
             cmbSubject.TabIndex = 21;
             cmbSubject.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // cmbTeacher
             // 
             cmbTeacher.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTeacher.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbTeacher.Font = new Font("Segoe UI", 12F);
             cmbTeacher.FormattingEnabled = true;
-            cmbTeacher.Location = new Point(809, 220);
+            cmbTeacher.Location = new Point(30, 135);
             cmbTeacher.Name = "cmbTeacher";
-            cmbTeacher.Size = new Size(200, 39);
+            cmbTeacher.Size = new Size(240, 36);
             cmbTeacher.TabIndex = 20;
             cmbTeacher.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
-            // cnDay
+            // dtpDate
             // 
-            cnDay.DropDownStyle = ComboBoxStyle.DropDownList;
-            cnDay.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cnDay.FormattingEnabled = true;
-            cnDay.Location = new Point(1107, 120);
-            cnDay.Name = "cnDay";
-            cnDay.Size = new Size(200, 39);
-            cnDay.TabIndex = 19;
-            cnDay.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            dtpDate.Font = new Font("Segoe UI", 12F);
+            dtpDate.Format = DateTimePickerFormat.Short;
+            dtpDate.Location = new Point(570, 50);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(240, 34);
+            dtpDate.TabIndex = 19;
+            dtpDate.ValueChanged += dtpDate_ValueChanged;
+            // 
+            // lblAbsentTeacher
+            // 
+            lblAbsentTeacher.AutoSize = true;
+            lblAbsentTeacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblAbsentTeacher.Location = new Point(840, 15);
+            lblAbsentTeacher.Name = "lblAbsentTeacher";
+            lblAbsentTeacher.Size = new Size(157, 28);
+            lblAbsentTeacher.TabIndex = 17;
+            lblAbsentTeacher.Text = "Absent Teacher";
+            // 
+            // cmbAbsentTeacher
+            // 
+            cmbAbsentTeacher.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAbsentTeacher.Font = new Font("Segoe UI", 12F);
+            cmbAbsentTeacher.FormattingEnabled = true;
+            cmbAbsentTeacher.Location = new Point(840, 50);
+            cmbAbsentTeacher.Name = "cmbAbsentTeacher";
+            cmbAbsentTeacher.Size = new Size(240, 36);
+            cmbAbsentTeacher.TabIndex = 18;
+            cmbAbsentTeacher.SelectedIndexChanged += cmbAbsentTeacher_SelectedIndexChanged;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(1107, 274);
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label8.Location = new Point(300, 100);
             label8.Name = "label8";
-            label8.Size = new Size(94, 38);
+            label8.Size = new Size(67, 28);
             label8.TabIndex = 17;
             label8.Text = "Room";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(651, 421);
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label6.Location = new Point(840, 100);
             label6.Name = "label6";
-            label6.Size = new Size(139, 38);
+            label6.Size = new Size(100, 28);
             label6.TabIndex = 16;
             label6.Text = "End Time";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(651, 316);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.Location = new Point(570, 100);
             label5.Name = "label5";
-            label5.Size = new Size(154, 38);
+            label5.Size = new Size(112, 28);
             label5.TabIndex = 15;
             label5.Text = "Start Time";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(651, 218);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.Location = new Point(30, 100);
             label4.Name = "label4";
-            label4.Size = new Size(116, 38);
+            label4.Size = new Size(85, 28);
             label4.TabIndex = 14;
             label4.Text = "Teacher";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(651, 118);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.Location = new Point(300, 15);
             label2.Name = "label2";
-            label2.Size = new Size(114, 38);
+            label2.Size = new Size(82, 28);
             label2.TabIndex = 13;
             label2.Text = "Subject";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1107, 79);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(570, 15);
             label1.Name = "label1";
-            label1.Size = new Size(68, 38);
+            label1.Size = new Size(57, 28);
             label1.TabIndex = 12;
-            label1.Text = "Day";
+            label1.Text = "Date";
             // 
             // timetable
             // 
@@ -332,8 +373,10 @@
         private DataGridView dgvTimetable;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Subject;
+        private DataGridViewTextBoxColumn AbsentTeacherCol;
         private DataGridViewTextBoxColumn Teacher;
         private DataGridViewTextBoxColumn Room;
+        private DataGridViewTextBoxColumn DateCol;
         private ComboBox cmbGrade;
         private Button btnSave;
         private Panel panel1;
@@ -347,6 +390,8 @@
         private ComboBox cmbEndTime;
         private ComboBox cmbSubject;
         private ComboBox cmbTeacher;
-        private ComboBox cnDay;
+        private DateTimePicker dtpDate;
+        private Label lblAbsentTeacher;
+        private ComboBox cmbAbsentTeacher;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +18,14 @@ namespace SSMS
 
         private void Loading_Load(object sender, EventArgs e)
         {
-            // Set Label colors
+            
             label1.ForeColor = Color.Black;
             label2.ForeColor = Color.Green;
 
-            // Disable the form during loading
+            
             this.Enabled = false;
 
-            // Set initial values
+            
             label1.Text = "Loading...";
             label2.Text = "0%";
             progressBar1.Minimum = 0;
@@ -33,8 +33,8 @@ namespace SSMS
             progressBar1.Value = 0;
             progressBar1.Style = ProgressBarStyle.Continuous;
 
-            // Start loading timer
-            timer1.Interval = 50; // Update every 50ms
+            
+            timer1.Interval = 50; 
             timer1.Start();
         }
 
@@ -42,29 +42,29 @@ namespace SSMS
         {
             if (progressBar1.Value < 100)
             {
-                // Increase progress randomly (3-8% each tick)
+                
                 Random rnd = new Random();
                 int increment = rnd.Next(3, 9);
 
-                // Calculate new value but don't exceed 100
+                
                 int newValue = progressBar1.Value + increment;
 
-                // Cap the value at 100
+                
                 if (newValue > 100) newValue = 100;
 
-                // Update progress bar
+                
                 progressBar1.Value = newValue;
 
-                // Update UI
+                
                 label2.Text = progressBar1.Value.ToString() + "%";
                 label2.ForeColor = Color.Green;
 
-                // Update status messages based on progress
+                
                 UpdateStatusMessage(progressBar1.Value);
             }
             else
             {
-                // Loading complete
+                
                 timer1.Stop();
                 CompleteLoading();
             }
@@ -104,16 +104,16 @@ namespace SSMS
 
         private void CompleteLoading()
         {
-            // Set final values
+            
             progressBar1.Value = 100;
             label1.Text = "Loading complete!";
             label2.Text = "100%";
             label2.ForeColor = Color.Green;
 
-            // Enable the form
+            
             this.Enabled = true;
 
-            // Use timer to delay before hiding
+            
             System.Windows.Forms.Timer completionTimer = new System.Windows.Forms.Timer();
             completionTimer.Interval = 300;
             completionTimer.Tick += (s, timerEvent) =>
@@ -121,7 +121,7 @@ namespace SSMS
                 completionTimer.Stop();
                 completionTimer.Dispose();
 
-                // Hide loading screen and go to Login form
+                
                 HideLoadingScreen();
                 GoToLogin();
             };
@@ -137,11 +137,11 @@ namespace SSMS
 
         private void GoToLogin()
         {
-            // Create and show the Login form
+            
             Signin loginForm = new Signin();
             loginForm.Show();
 
-            // Hide the current loading form
+            
             this.Hide();
         }
 

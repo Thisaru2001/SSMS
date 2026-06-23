@@ -1,4 +1,4 @@
-﻿namespace SSMS
+namespace SSMS
 {
     partial class studentViewNotice
     {
@@ -36,23 +36,23 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNotices).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
+            
+            
+            
             panel1.BackColor = Color.FromArgb(46, 125, 50);
             panel1.Controls.Add(btnRefresh);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
-            panel1.Enabled = false;
+
             panel1.ForeColor = SystemColors.ControlText;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1084, 110);
             panel1.TabIndex = 0;
-            // 
-            // btnRefresh
-            // 
+            
+            
+            
             btnRefresh.BackColor = Color.White;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("Segoe UI", 14.2641506F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -63,9 +63,9 @@
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "⟳ Refresh";
             btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
+            
+            
+            
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 21.73585F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
@@ -74,9 +74,9 @@
             label2.Size = new Size(214, 45);
             label2.TabIndex = 1;
             label2.Text = "View Notices";
-            // 
-            // label1
-            // 
+            
+            
+            
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.73585F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
@@ -85,9 +85,9 @@
             label1.Size = new Size(49, 45);
             label1.TabIndex = 0;
             label1.Text = "🕭";
-            // 
-            // dgvNotices
-            // 
+            
+            
+            
             dgvNotices.BackgroundColor = Color.White;
             dgvNotices.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNotices.GridColor = Color.Silver;
@@ -96,9 +96,9 @@
             dgvNotices.RowHeadersWidth = 45;
             dgvNotices.Size = new Size(1037, 454);
             dgvNotices.TabIndex = 1;
-            // 
-            // studentViewNotice
-            // 
+            
+            
+            
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BG;

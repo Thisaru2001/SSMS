@@ -1,4 +1,4 @@
-﻿namespace SSMS
+namespace SSMS
 {
     partial class addmarks
     {
@@ -167,7 +167,9 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "addmarks";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "addmarks";
+            Load += addmarks_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -180,7 +182,6 @@
 
         private Panel panel1;
         private Label label2;
-        private Label label1;
         private PictureBox pictureBox1;
         private Label label3;
         private Label label4;

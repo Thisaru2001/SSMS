@@ -1,4 +1,4 @@
-﻿namespace SSMS
+namespace SSMS
 {
     partial class Loading
     {
@@ -34,9 +34,9 @@
             timer1 = new System.Windows.Forms.Timer(components);
             label2 = new Label();
             SuspendLayout();
-            // 
-            // progressBar1
-            // 
+            
+            
+            
             progressBar1.BackColor = Color.White;
             progressBar1.ForeColor = Color.Green;
             progressBar1.Location = new Point(232, 336);
@@ -44,9 +44,9 @@
             progressBar1.Size = new Size(433, 29);
             progressBar1.TabIndex = 0;
             progressBar1.Click += progressBar1_Click;
-            // 
-            // label1
-            // 
+            
+            
+            
             label1.AutoSize = true;
             label1.BackColor = Color.White;
             label1.Location = new Point(323, 374);
@@ -54,13 +54,13 @@
             label1.Size = new Size(93, 20);
             label1.TabIndex = 1;
             label1.Text = "<<details>>";
-            // 
-            // timer1
-            // 
+            
+            
+            
             timer1.Tick += timer1_Tick;
-            // 
-            // label2
-            // 
+            
+            
+            
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Location = new Point(671, 336);
@@ -68,9 +68,9 @@
             label2.Size = new Size(93, 20);
             label2.TabIndex = 2;
             label2.Text = "<<details>>";
-            // 
-            // Loading
-            // 
+            
+            
+            
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.loading;
